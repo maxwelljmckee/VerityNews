@@ -7,14 +7,16 @@ import './index.css';
 import App from './App';
 import configureStore from './store/index';
 import { restoreCSRF, fetch } from './store/csrf';
+import * as sessionActions from './store/session';
 
 
-const store = configureStore();
+export const store = configureStore();
 if (process.env.NODE_ENV !== 'production') {
   restoreCSRF();
 
   window.store = store;
   window.csrfFetch = fetch;
+  window.sessionActions = sessionActions
 }
 
 const Root = () => {
