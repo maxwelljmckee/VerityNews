@@ -1,26 +1,46 @@
 import { fetch } from './csrf';
 
 // DEFINE CONSTANTS //
-export const SET_SESSION_USER = 'SET_SESSION_USER';
-export const REMOVE_SESSION_USER = 'REMOVE_SESSION_USER';
+const SET_SESSION_USER = 'SET_SESSION_USER';
+const REMOVE_SESSION_USER = 'REMOVE_SESSION_USER';
+const REGISTER_USER = 'REGISTER_USER';
 
 
-// DEFINE ACTION CREATORS //
+// DEFINE ACTION CREATORS - ASYNC/THUNK //
 export const loginUser = (credential, password) => async (dispatch) => {
   const res = await fetch('/api/session', {
     method: 'POST',
     body: JSON.stringify({ credential, password })
   })
-  dispatch(setSessionUser(res.data.user))
-  return res
+  dispatch(setSessionUser(res.data.user));
+  return res;
+}
+
+export const registerUser = (user) => async(dispatch) => {
+  const { email, password, username } = user;
+  const res = await fetch('/api/users', {
+    method: 'POST',
+    body: JSON.stringify({ email, password, username })
+  })
+  dispatch(setSessionUser(res.data.user));
+  return res;
 }
 
 export const restoreUser = () => async (dispatch) => {
   const res = await fetch('/api/session');
-  dispatch(setSessionUser(res.data.user))
+  dispatch(setSessionUser(res.data.user));
   return res
 }
 
+export const deleteSession = () => async(dispatch) => {
+  const res = await fetch('/api/session', {
+    method: 'DELETE',
+  })
+  dispatch(removeSessionUser());
+  return res
+}
+
+// DEFINE ACTION CREATORS - SYNC //
 export const setSessionUser = (user) => {
   return {
     type: SET_SESSION_USER,

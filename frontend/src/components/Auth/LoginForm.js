@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { loginUser } from '../../store/session';
 
 
-const LoginFormPage = () => {
+const LoginForm = () => {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
@@ -37,7 +37,7 @@ const LoginFormPage = () => {
         <input
           name='password'
           type='password'
-          placeholder='Enter password'
+          placeholder='Enter Password'
           onChange={(e) => setPassword(e.target.value)}
           required
         />
@@ -47,4 +47,4 @@ const LoginFormPage = () => {
   )
 }
 
-export default LoginFormPage;
+export default LoginForm;
