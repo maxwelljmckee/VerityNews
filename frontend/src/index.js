@@ -6,11 +6,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import configureStore from './store/index';
+import { restoreCSRF, fetch } from './store/csrf';
 
 
 const store = configureStore();
 if (process.env.NODE_ENV !== 'production') {
+  restoreCSRF();
+
   window.store = store;
+  window.csrfFetch = fetch;
 }
 
 const Root = () => {
