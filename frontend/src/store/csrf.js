@@ -16,7 +16,7 @@ export const fetch = async(url, options = {}) => {
   const contentType = res.headers.get('Content-Type');
   if (contentType && contentType.includes('application/json')) {
     const data = await res.json();
-    res.data = data
+    res.data = data;
   }
 
   if (res.status >= 400) throw res;
