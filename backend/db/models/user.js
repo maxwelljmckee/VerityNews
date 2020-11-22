@@ -38,7 +38,14 @@ module.exports = (sequelize, DataTypes) => {
       return await User.scope('currentUser').findByPk(user.id);
     };
     static associate(models) {
-      // define association here
+      User.hasMany(models.Channel, { foreignKey: 'userId' });
+
+      const columnMapping = {
+        through: 'ReadLater',
+        otherKey: 'articleId',
+        foreignKey: 'userId'
+      }
+      User.belongsToMany(models.Article, columnMapping);
     }
   };
   User.init(
