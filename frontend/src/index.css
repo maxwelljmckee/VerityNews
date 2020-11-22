@@ -1,1 +1,60 @@
 /* TODO Add site wide styles */
+
+body {
+  font-family: "Capsule Sans Text", sans-serif;
+
+}
+
+.navbar {
+  background-color: rgb(119, 119, 231);
+  color: white;
+  height: 80px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar__logo,
+.navbar__search,
+.navbar__links {
+  margin: 5px 20px;
+}
+
+.navbar__logo a,
+.navbar__links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+.navbar__logo a {
+  font-size: 30px;
+}
+
+.navbar__links a {
+  font-size: 20px;
+}
+
+.navbar__search > form > input {
+  height: 35px;
+  width: 350px;
+  border-radius: 15px;
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+.navbar__search > form {
+  display: flex;
+}
+
+.navbar__search > form > input:focus {
+  outline: none;
+}
+
+.navbar__links {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

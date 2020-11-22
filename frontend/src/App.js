@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -8,6 +8,8 @@ import LoginForm from './components/Auth/LoginForm';
 import RegisterForm from './components/Auth/RegisterForm';
 import Splash from './components/Splash';
 import NotFound from './components/NotFound';
+import Navigation from './components/Navigation';
+import UserProfile from './components/UserProfile';
 
 
 function App() {
@@ -22,23 +24,21 @@ function App() {
 
   return isLoaded && (
     <React.Fragment>
-      <h1>Hello world!</h1>
-      <nav>
-        <NavLink to ='/register'>Sign Up</NavLink>
-        <NavLink to='/login'>Login</NavLink>
-        <Link to='/logout'>Logout</Link>
-      </nav>
+      <Navigation />
 
       <Switch>
+        <Route path='/users/:id' component={UserProfile} />
         <Route path='/login'>
-          { sessionUser ? <Redirect to='/' /> : <LoginForm /> }
+          { sessionUser ? <Redirect to={`/users/${sessionUser.id}`} /> : <LoginForm /> }
         </Route>
+
         <Route path='/logout' render={() => {
           dispatch(deleteSession());
           return <Redirect to='/' />
         }} />
+
         <Route path='/register'>
-          {sessionUser ? <Redirect to='/' /> : <RegisterForm />}
+          {sessionUser ? <Redirect to={`/users/${sessionUser.id}`} /> : <RegisterForm />}
         </Route>
 
         <Route exact path='/' component={Splash} />
