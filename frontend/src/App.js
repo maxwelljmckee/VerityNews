@@ -29,16 +29,14 @@ function App() {
         {/* <Route path='/users/:id' component={UserProfile} /> */}
         <Route path='/explore' component={MainPageLayout} />
         <Route path='/login'>
-          { sessionUser ? <Redirect to={`/users/${sessionUser.id}`} /> : <LoginForm /> }
+          { sessionUser ? <Redirect to={`/explore`} /> : <LoginForm /> }
         </Route>
-
         <Route path='/logout' render={() => {
           dispatch(deleteSession());
           return <Redirect to='/' />
         }} />
-
         <Route path='/register'>
-          {sessionUser ? <Redirect to={`/users/${sessionUser.id}`} /> : <RegisterForm />}
+          {sessionUser ? <Redirect to={`/explore`} /> : <RegisterForm />}
         </Route>
 
         <Route exact path='/' component={Welcome} />

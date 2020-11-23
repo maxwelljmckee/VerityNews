@@ -16,5 +16,34 @@
 
 .sidebar__logo {
   align-self: center;
-  height: 170px;
+  height: 150px;
+}
+
+.welcome__message {
+  margin: 15px auto 25px;
+}
+
+.channel__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.channel__header {
+  display: flex;
+  justify-content: flex-start;
+  width: 280px;
+}
+
+.channel__header i {
+  margin: 5px 15px;
+  font-size: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.channel__header div {
+  font-size: 18px;
+  align-self: center;
 }

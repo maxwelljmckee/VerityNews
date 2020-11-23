@@ -1,11 +1,19 @@
 import React, { Fragment } from 'react';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 
 const MainPageComponent = () => {
   return (
-    <Fragment>
-      <h1>this is the main page component</h1>
-    </Fragment>
+    <Router>
+      <Switch>
+        <Route path='/explore' component={Explore} />
+        <Route path='/explore/:category' component={Explore}/>
+      </Switch>
+    </Router>
   )
 }
 

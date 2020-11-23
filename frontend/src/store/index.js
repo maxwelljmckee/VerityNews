@@ -7,6 +7,7 @@ import {
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { sessionReducer } from './session';
+import { channelsReducer } from './channels';
 
 
 let enhancer;
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const rootReducer = combineReducers({
   session: sessionReducer,
+  channels: channelsReducer,
 });
 
 

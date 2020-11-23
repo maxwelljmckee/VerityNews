@@ -32,6 +32,7 @@ const Navbar = () => {
         {user && <ProfileButton user={user} />}
       </div>
     </div>
+    
   )
 }
 

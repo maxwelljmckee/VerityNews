@@ -1,14 +1,60 @@
 .navbar {
   background-color: rgb(238, 238, 238);
-  color: white;
   height: 80px;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   box-sizing: border-box;
   z-index: 0;
   box-shadow: 0 0 3px 2px rgb(112, 112, 112);
 }
+
+.navbar a,
+.navbar i {
+  font-size: 30px;
+  cursor: pointer;
+  color: rgb(58, 58, 58);
+}
+
+.settings__menu {
+  width: 150px;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  z-index: 1;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings__menu a {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.position__box {
+  position: relative;
+}
+
+.fa-cog:blur {
+  transform: rotate(90deg)
+}
+
+
+
+
+
+
+
+
+
+
+/* OLD NAVBAR STYLES */
+/* 
 
 .navbar__logo,
 .navbar__search,
@@ -31,14 +77,6 @@
   font-size: 20px;
 }
 
-.navbar__search > form > input {
-  height: 35px;
-  /* width: 350px; */
-  border-radius: 15px;
-  font-size: 18px;
-  flex-grow: 1;
-}
-
 .navbar__search > form {
   display: flex;
 }
@@ -48,8 +86,7 @@
 }
 
 .navbar__links {
-  /* width: 400px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
