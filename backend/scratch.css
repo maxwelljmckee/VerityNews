@@ -1,0 +1,12 @@
+#image-tester {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+#image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}

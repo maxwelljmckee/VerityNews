@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, DataTypes
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Source extends Model {
@@ -58,7 +58,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     country: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+    },
+    imageUrl: {
+      type: DataTypes.STRING
     }
   }, {
     sequelize,
