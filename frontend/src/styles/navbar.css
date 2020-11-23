@@ -1,18 +1,13 @@
-/* TODO Add site wide styles */
-
-body {
-  font-family: "Capsule Sans Text", sans-serif;
-
-}
-
 .navbar {
-  background-color: rgb(119, 119, 231);
+  background-color: rgb(238, 238, 238);
   color: white;
   height: 80px;
-  width: 100vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-sizing: border-box;
+  z-index: 0;
+  box-shadow: 0 0 3px 2px rgb(112, 112, 112);
 }
 
 .navbar__logo,
@@ -38,7 +33,7 @@ body {
 
 .navbar__search > form > input {
   height: 35px;
-  width: 350px;
+  /* width: 350px; */
   border-radius: 15px;
   font-size: 18px;
   flex-grow: 1;
@@ -53,7 +48,7 @@ body {
 }
 
 .navbar__links {
-  width: 400px;
+  /* width: 400px; */
   display: flex;
   justify-content: space-between;
   align-items: center;

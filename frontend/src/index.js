@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 
-import './reset.css'
-import './index.css';
+import './styles/reset.css'
+import './styles/index.css';
 import App from './App';
 import configureStore from './store/index';
 import { restoreCSRF, fetch } from './store/csrf';

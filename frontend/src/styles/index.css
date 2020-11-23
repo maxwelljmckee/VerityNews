@@ -1,0 +1,38 @@
+@import './navbar.css';
+@import './sidebar.css';
+
+
+
+body {
+  font-family: "Capsule Sans Text", sans-serif;
+  box-sizing: border-box;
+}
+
+.logo__main {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 85px;
+  letter-spacing: 6px;
+}
+
+.logo__small {
+  font-size: 40px;
+  position: relative;
+  right: 10px;
+  bottom: 10px;
+  border-bottom: 1px solid black;
+}
+
+.main__page__container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  grid-template-rows: 100%;
+  grid-template-areas: "group1 group2";
+}
+
+.main__page__group-1 {
+  grid-area: group1;
+}
+
+.main__page__group-2 {
+  grid-area: group2;
+}
