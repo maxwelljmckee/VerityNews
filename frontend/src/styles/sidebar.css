@@ -10,8 +10,8 @@
   margin-left: 70px;
   background-color: rgb(238, 238, 238);
   box-shadow: 0 0 3px 3px rgb(112, 112, 112);
-  position: relative;
-  z-index: 1;
+  position: fixed;
+  z-index: 2;
 }
 
 .sidebar__logo {

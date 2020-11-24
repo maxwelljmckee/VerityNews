@@ -28,7 +28,7 @@ const setSources = (sources) => {
 export const sourcesReducer = (state = [], action) => {
   switch (action.type) {
     case SET_SOURCES:
-      return [...state, ...action.sources]
+      return [...action.sources]
     default:
       return state;
   }

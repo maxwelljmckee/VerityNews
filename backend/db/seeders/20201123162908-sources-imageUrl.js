@@ -19,7 +19,7 @@ module.exports = {
       'cnn': 'https://logos-download.com/wp-content/uploads/2016/02/CNN-Travel-logo.png',
       'entertainment-weekly': 'https://i.pinimg.com/originals/bd/69/9e/bd699e87c275349639aef779d92fde12.png',
       'espn': 'https://assets.stickpng.com/thumbs/5847f1b0cef1014c0b5e485d.png',
-      'fortune': 'https://assets.stickpng.com/images/5847f9f3cef1014c0b5e48ca.png',
+      'fortune': 'https://offleashpr.com/wp-content/uploads/2017/06/fortune-logo.png',
       'fox-news': 'https://lh3.googleusercontent.com/l8woCU1YmtyKlkNOh2TNvQJj8P78Rm56JljLDUj-83YzD3OU6UCvqM-vzqpBOkOrW2Q=s180',
       'fox-sports': 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Fox_Sports_Logo.svg/1200px-Fox_Sports_Logo.svg.png',
       'google-news': 'https://upload.wikimedia.org/wikipedia/commons/2/23/Google-News_logo.png',

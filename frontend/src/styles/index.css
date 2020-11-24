@@ -37,3 +37,9 @@ body {
 .main__page__group-2 {
   grid-area: group2;
 }
+
+.main__page__component {
+  position: relative;
+  top: 90px;
+  z-index: 0;
+}

@@ -9,18 +9,15 @@ import Explore from '../mainPageComponents/Explore';
 
 
 const MainPageComponent = () => {
-
-
-
   return (
-    <Fragment>
+    <div className='main__page__component'>
       <Router>
         <Switch>
-          <Route path='/explore' component={Explore} />
-          <Route path='/explore/:category' component={Explore}/>
+          <Route exact path='/explore' component={Explore} />
+          <Route path='/explore/:category' component={Explore} />
         </Switch>
       </Router>
-    </Fragment>
+    </div>
   )
 }
 

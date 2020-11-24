@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { NavLink, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect, NavLink, Link, useHistory } from 'react-router-dom';
 
 
 import ProfileButton from '../ProfileButton';
 import Settings from '../Auth/Settings';
+import { fetchSources } from '../../store/sources';
 
 const Navbar = () => {
   const [isHidden, setIsHidden] = useState(true);
-
-  const user = useSelector(state => state.session.user)
+  const dispatch = useDispatch();
+  // const user = useSelector(state => state.session.user);
+  const history = useHistory();
 
   const toggleIsHidden = () => {
     setIsHidden(!isHidden);
+  }
+
+  const handleClick = () => {
+    const setSources = async() => {
+      dispatch(fetchSources);
+    }
+    setSources()
+    history.push('/explore')
   }
 
   useEffect(() => {
@@ -21,8 +31,8 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <Link to='/explore' >
-        <i className="fas fa-home" />
+      <Link to='/explore'>
+        <i className="fas fa-home" onClick={handleClick} />
       </Link>
       <a target='_blank' rel='noreferrer' 
         href='https://github.com/maxwelljmckee/Verity/'>

@@ -1,10 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 import CategoryList from '../mainPageComponents/CategoryList';
 import SourceList from './SourceList'
 
 
 const Explore = () => {
+  const params = useParams();
+  console.log(params);
   const categories = [
     {
       name: 'General',
