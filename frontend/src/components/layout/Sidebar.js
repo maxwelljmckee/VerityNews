@@ -30,6 +30,7 @@ const Sidebar = () => {
                 <div className='channel__header'>
                   <i onClick={toggleIsHidden} className="far fa-caret-square-down"></i>
                   <div>Your Channels</div>
+                  <div>Loading...</div>
                 </div>
                 <ChannelList />
               </Fragment>
