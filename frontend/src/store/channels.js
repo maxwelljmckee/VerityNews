@@ -4,7 +4,7 @@ import { fetch } from './csrf';
 const FETCH_CHANNELS = 'FETCH_CHANNELS'
 
 // DEFINE ACTION CREATORS - ASYNC/THUNK //
-export const fetchChannels = () => async(dispatch) => {
+export const fetchChannels = () => async (dispatch) => {
   const res = await fetch('')
 }
 

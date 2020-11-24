@@ -22,7 +22,7 @@ const Sidebar = () => {
         <div className='channel__container'>
             { isHidden ? (
               <div className='channel__header'>
-                <i onClick={toggleIsHidden} class="far fa-caret-square-right"></i>
+                <i onClick={toggleIsHidden} className="far fa-caret-square-right"></i>
                 <div>Your Channels</div>
               </div>
             ) : (

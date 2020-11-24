@@ -16,7 +16,7 @@ export const loginUser = (credential, password) => async (dispatch) => {
   return res;
 }
 
-export const registerUser = (user) => async(dispatch) => {
+export const registerUser = (user) => async (dispatch) => {
   const { email, password, username } = user;
   const res = await fetch('/api/users', {
     method: 'POST',
@@ -32,7 +32,7 @@ export const restoreUser = () => async (dispatch) => {
   return res
 }
 
-export const deleteSession = () => async(dispatch) => {
+export const deleteSession = () => async (dispatch) => {
   const res = await fetch('/api/session', {
     method: 'DELETE',
   })

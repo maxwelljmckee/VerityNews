@@ -1,4 +1,5 @@
 'use strict';
+const db = require('../models');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -58,8 +59,18 @@ module.exports = {
       'wired': 'https://upskill.io/wp-content/uploads/2017/07/wired-logo.jpg',
     }
 
-    console.log(seedData.wired);
-    console.log(hello);
+    const sources = await db.Source.findAll()
+    console.log(sources);
+
+    await Promise.all(sources.map(async(source) => {
+      const key = source.encodedName
+      const dbModel = await db.Source.findOne({ 
+        where: { encodedName: key }
+      })
+      await dbModel.update({
+        imageUrl: seedData[key]
+      })
+    }))
 
   },
 
