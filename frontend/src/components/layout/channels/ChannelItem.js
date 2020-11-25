@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { deleteChannel } from '../../../store/channels';
 import ChannelSourceList from './ChannelSourceList';
 
 
-const ChannelItem = ({ channel, idx }) => {
+const ChannelItem = ({ channel }) => {
   const [isHidden, setIsHidden] = useState(true);
   const dispatch = useDispatch();
 
@@ -14,7 +15,7 @@ const ChannelItem = ({ channel, idx }) => {
   }
 
   const handleDelete = () => {
-    (async(idx) => {
+    (async() => {
       dispatch(deleteChannel({ channelId: channel.id }))
     })();
   }
@@ -34,6 +35,9 @@ const ChannelItem = ({ channel, idx }) => {
             </div>
             <div className='channel__item__header-group2'>
               <i className="fas fa-minus" onClick={handleDelete} ></i>
+              <Link to={`/channels/:${channel.name}`}>
+                <i className="fas fa-arrow-circle-right"></i>
+              </Link>
             </div>
           </div>
         </Fragment>
@@ -46,9 +50,12 @@ const ChannelItem = ({ channel, idx }) => {
               </div>
               <div className='channel__item__header-group2'>
                 <i className="fas fa-minus" onClick={handleDelete} ></i>
+                <Link to={`/channels/:${channel.id}`}>
+                  <i className="fas fa-arrow-circle-right"></i>
+                </Link>
               </div>
             </div>
-            <ChannelSourceList />
+            <ChannelSourceList channel={channel} />
           </Fragment>
         )}
     </div>

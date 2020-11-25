@@ -48,13 +48,13 @@
 
 .channel__header i {
   margin: 5px 12px;
-  font-size: 20px;
+  font-size: 18px;
   height: 22px;
   cursor: pointer;
 }
 
 .channel__header div {
-  font-size: 18px;
+  font-size: 16px;
   align-self: center;
   cursor: pointer;
 }
@@ -73,8 +73,8 @@
 }
 
 .new__channel__form {
-  height: 35px;
-  width: 250px;
+  height: 30px;
+  width: 220px;
   border: 1px solid rgb(112, 112, 112);
   box-shadow: 0 0 2px 1px rgb(112, 112, 112);
   border-radius: 4px;
@@ -90,18 +90,8 @@
 .new__channel__form input {
   border: none;
   max-width: 195px;
-  font-size: 20px;
+  font-size: 18px;
   padding-left: 8px;
-}
-
-.new__channel__form button {
-  background-color: rgb(55, 198, 255);
-  height: 35px;
-  width: 45px;
-  border-radius: 4px;
-  border: none;
-  margin: 0;
-  cursor: pointer;
 }
 
 .new__channel__form input:focus,
@@ -119,8 +109,6 @@
   justify-content: space-around;
   align-items: center;
   width: 280px;
-  /* border-top: 1px solid rgb(112, 112, 112); */
-  /* border-bottom: 1px solid rgb(112, 112, 112); */
 }
 
 .channel__item__header {
@@ -134,15 +122,49 @@
 .channel__item__header-group1 {
   display: flex;
   align-items: center;
-  position: relative
+  position: relative;
+  font-size: 16px;
 }
 
 .channel__item__header i {
   padding: 5px 10px;
   padding-right: 14px;
   cursor: pointer;
+  color: rgb(226, 226, 226)
 }
 
 .channel__item__header div {
+  cursor: pointer;
+}
+
+.cs__list {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+  padding: 0;
+  /* padding-left: 10px; */
+  width: 167px;
+  font-size: 14px;
+  /* border-top: 1px solid rgb(112, 112, 112);
+  border-bottom: 1px solid rgb(112, 112, 112); */
+}
+
+.cs__list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.cs__list__item li {
+  list-style: none;
+  margin: 5px;
+}
+
+.cs__list__item i {
+  font-size: 10px;
+}
+
+.fa-minus {
   cursor: pointer;
 }

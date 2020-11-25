@@ -92,18 +92,15 @@ router.delete('/channels',
 
 
 // GET AND POST CHANNELSOURCES ASSOCIATED WITH A CHANNEL //
-router.get('/channels/:channelId/sources',
+router.get('/channels/sources',
   requireAuth,
   asyncHandler(async (req, res) => {
     const { channelId } = req.params;
-    const sources = db.Source.findAll({
+    const channelSources = await db.ChannelSource.findAll({
       where: channelId,
-      include: {
-        model: ChannelSource,
-        include: Channel
-      }
+      include: db.Source
     })
-    res.json(sources)
+    res.json(channelSources)
 }))
 
 
@@ -111,19 +108,29 @@ router.post(`/channels/sources`,
   requireAuth,
   asyncHandler(async (req, res) => {
     const { channelId, sourceId } = req.body;
-    console.log('===================================');
     
     await db.ChannelSource.create({ channelId, sourceId })
     const channelSources = await db.ChannelSource.findAll({ 
       where: { channelId },
       include: db.Source
     });
-    // console.log(channelSources);
-    const sources = channelSources.map(cs => {
-      return cs.sourceId
-    })
-    console.log(sources);
-    // res.json(sources)
+    // const sources = channelSources.map(cs => {
+    //   return cs.Source
+    // })
+    res.json(channelSources);
+}))
+
+router.delete('/channels/sources',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { channelId, sourceId } = req.body;
+    await db.ChannelSource.destroy({ where: { channelId, sourceId }});
+
+    const channelSources = await db.ChannelSource.findAll({
+      where: { channelId },
+      include: db.Source
+    });
+    res.json(channelSources);
 }))
 
 module.exports = router;

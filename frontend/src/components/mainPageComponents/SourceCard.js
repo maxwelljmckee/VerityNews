@@ -1,25 +1,32 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { addChannelSources } from '../../store/channelSources';
+import { addChannelSource } from '../../store/channelSources';
 
 
 const SourceCard = ({ source }) => {
   const [formIsHidden, setFormIsHidden] = useState(true);
   const [animation, setAnimation] = useState(false)
+
   const channels = useSelector(state => state.channels)
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    setFormIsHidden(true);
+  }, [])
 
   const toggleFormIsHidden = () => {
     setFormIsHidden(!formIsHidden);
   }
 
-
-  useEffect(() => {
-    setFormIsHidden(true);
-  }, [])
-
-  const handleSubmit = (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
+    const channelId = e.target.id.split('-')[1];
+    dispatch(addChannelSource({
+      channelId,
+      sourceId: source.id
+    }))
+    setFormIsHidden(true)
   }
 
 
@@ -46,9 +53,11 @@ const SourceCard = ({ source }) => {
                 setAnimation(false)
               }} />
           <ul>
-            <div>Choose a Channel</div>
+            <div key='title_div'>Choose a Channel</div>
             {channels.map(channel => {
-              return <li key={channel.id}>{channel.name}</li>
+              return <li onClick={handleClick} 
+                id={`channel-${channel.id}`} 
+                key={channel.id}>{channel.name}</li>
             })}
           </ul>
         </div>

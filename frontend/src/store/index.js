@@ -9,6 +9,7 @@ import logger from 'redux-logger';
 import { sessionReducer } from './session';
 import { channelsReducer } from './channels';
 import { sourcesReducer } from './sources';
+import { channelSourcesReducer } from './channelSources';
 
 
 let enhancer;
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   sources: sourcesReducer,
   channels: channelsReducer,
+  channelSources: channelSourcesReducer
 });
 
 
