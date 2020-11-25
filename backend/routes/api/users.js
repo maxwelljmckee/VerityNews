@@ -52,7 +52,10 @@ router.get('/channels',
   asyncHandler(async (req, res) => {
   const { id } = req.user;
   console.log('userId:', id);
-  const channels = await db.Channel.findAll({ where: { userId: id }});
+  const channels = await db.Channel.findAll({ 
+    where: { userId: id },
+    order: ['name']
+  });
   res.json(channels || []);
 }))
 
@@ -64,7 +67,10 @@ router.post('/channels',
   const { id } = req.user;
   await db.Channel.create({ name, userId: id });
 
-  const channels = await db.Channel.findAll({ where: { userId: id } });
+  const channels = await db.Channel.findAll({ 
+    where: { userId: id },
+    order: ['name']
+  });
   res.json(channels);
 }))
 

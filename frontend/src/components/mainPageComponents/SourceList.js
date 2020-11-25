@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { Redirect, useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { fetchSources } from '../../store/sources';
 import Loading from '../Loading';
@@ -12,7 +12,6 @@ const SourceList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   let sources = useSelector(state => state.sources);
   const dispatch = useDispatch();
-  // const history = useHistory();
 
   const { category } = useParams();
   if (category) {
@@ -34,14 +33,12 @@ const SourceList = () => {
   return (
     <div className='sources__container'>
       <div className='sources__searchbar'>
-        {/* <form onSubmit={handleSubmit}> */}
-          <input 
-            type='text'
-            placeholder='Search by Publication Name'
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        {/* </form> */}
+        <input 
+          type='text'
+          placeholder='Search by Publication Name'
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
       { sources ? (
         <div className='source__card__container'>

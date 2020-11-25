@@ -10,8 +10,6 @@ const ChannelList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-
-    console.log('hello from postChannel');
     const loadChannels = async () => {
       dispatch(fetchChannels())
     }
@@ -19,12 +17,11 @@ const ChannelList = () => {
   }, [dispatch])
 
   return (
-    <div className='channel__list'>
-      {}
+    <Fragment>
       {channels.map(channel => {
         return <ChannelItem key={channel.id} channel={channel} />
       })}
-    </div>
+    </Fragment>
   )
 }
 

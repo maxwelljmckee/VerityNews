@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { postNewChannel } from '../../../store/channels';
 
 
-const NewChannelForm = () => {
+const NewChannelForm = ({ setFormIsHidden }) => {
   const dispatch = useDispatch();
   const [inputVal, setInputVal] = useState('');
   
-  const [formIsHidden, setFormIsHidden] = useState(true);
-  const toggleFormIsHidden = () => {
-    setFormIsHidden(!formIsHidden);
-  }
+  // const [formIsHidden, setFormIsHidden] = useState(true);
+  // const toggleFormIsHidden = () => {
+  //   setFormIsHidden(!formIsHidden);
+  // }
   
 
   
@@ -27,8 +27,8 @@ const NewChannelForm = () => {
 
   return (
     <div className='new__channel__button'>
-      <i className="fas fa-plus" onClick={toggleFormIsHidden} ></i>
-      { !formIsHidden &&
+      {/* <i className="fas fa-plus" onClick={toggleFormIsHidden} ></i> */}
+      {/* { !formIsHidden && */}
       <div className='new__channel__form'>
         <form onSubmit={handleSubmit}>
           <input 
@@ -39,7 +39,7 @@ const NewChannelForm = () => {
           />
         </form>
       </div>
-      }
+      {/* } */}
     </div>
   )
 }

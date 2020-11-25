@@ -16,7 +16,6 @@ export const postNewChannel = ({ name }) => async (dispatch) => {
 
 export const fetchChannels = () => async (dispatch) => {
   const res = await fetch(`/api/users/channels`);
-  console.log(res);
   if (res.data.length) dispatch(setChannels(res.data));
 }
 

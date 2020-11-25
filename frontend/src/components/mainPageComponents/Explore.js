@@ -7,7 +7,7 @@ import SourceList from './SourceList'
 
 const Explore = () => {
   const params = useParams();
-  console.log(params);
+  console.log('Explore params', params);
   const categories = [
     {
       name: 'General',

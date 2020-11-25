@@ -15,7 +15,7 @@ const Sidebar = () => {
         { user && <h2 className='welcome__message'>Welcome {user.username}</h2>}
         <ChannelHeader />
         <div className='board__container'>
-
+          
         </div>
       </div>
     </Fragment>

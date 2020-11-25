@@ -25,6 +25,9 @@
   line-height: 1.4em;
 }
 
+
+
+/* ------ CHANNEL HEADER && FORM ----- */
 .channel__container {
   padding: 5px 0;
   display: flex;
@@ -51,10 +54,12 @@
 .channel__header div {
   font-size: 18px;
   align-self: center;
+  cursor: pointer;
 }
 
 .channel__header-group1 {
   display: flex;
+  align-items: center;
 }
 
 .channel__list {
@@ -71,8 +76,7 @@
   border: 1px solid rgb(112, 112, 112);
   box-shadow: 0 0 2px 1px rgb(112, 112, 112);
   border-radius: 4px;
-  position: absolute;
-  top: 30px;
+  position: relative;
   /* left: 1px; */
   z-index: 3;
   background-color: white;
@@ -101,4 +105,41 @@
 .new__channel__form input:focus,
 .new__channel__form button:focus {
   outline: none;
+}
+
+
+
+/* ----- CHANNEL ENTRIES ----- */
+.channel__item__container {
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 280px;
+  /* border-top: 1px solid rgb(112, 112, 112); */
+  /* border-bottom: 1px solid rgb(112, 112, 112); */
+}
+
+.channel__item__header {
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.channel__item__header-group1 {
+  display: flex;
+  align-items: center;
+}
+
+.channel__item__header i {
+  padding: 5px 10px;
+  padding-right: 14px;
+  cursor: pointer;
+}
+
+.channel__item__header div {
+  cursor: pointer;
 }
