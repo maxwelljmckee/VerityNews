@@ -5,6 +5,8 @@ const asyncHandler = require("express-async-handler");
 const { handleValidationErrors } = require("../../utils/validation");
 const { setTokenCookie, requireAuth } = require("../../utils/auth");
 const { User } = require("../../db/models");
+const db = require("../../db/models");
+
 
 const router = express.Router();
 
@@ -43,5 +45,28 @@ router.post(
     });
   }),
 );
+
+
+router.get('/channels', 
+  requireAuth, 
+  asyncHandler(async (req, res) => {
+  const { id } = req.user;
+  console.log('userId:', id);
+  const channels = await db.Channel.findAll({ where: { userId: id }});
+  res.json(channels || []);
+}))
+
+
+router.post('/channels', 
+  requireAuth,
+  asyncHandler(async (req, res) => {
+  const { name } = req.body;
+  const { id } = req.user;
+  await db.Channel.create({ name, userId: id });
+
+  const channels = await db.Channel.findAll({ where: { userId: id } });
+  res.json(channels);
+}))
+
 
 module.exports = router;

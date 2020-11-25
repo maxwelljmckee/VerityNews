@@ -18,7 +18,7 @@ module.exports = {
       'cbs-news': 'https://vectorlogoseek.com/wp-content/uploads/2019/08/cbs-news-vector-logo.png',
       'cnn': 'https://logos-download.com/wp-content/uploads/2016/02/CNN-Travel-logo.png',
       'entertainment-weekly': 'https://i.pinimg.com/originals/bd/69/9e/bd699e87c275349639aef779d92fde12.png',
-      'espn': 'https://assets.stickpng.com/thumbs/5847f1b0cef1014c0b5e485d.png',
+      'espn': 'https://1000logos.net/wp-content/uploads/2017/01/ESPN-Logo.png',
       'fortune': 'https://offleashpr.com/wp-content/uploads/2017/06/fortune-logo.png',
       'fox-news': 'https://lh3.googleusercontent.com/l8woCU1YmtyKlkNOh2TNvQJj8P78Rm56JljLDUj-83YzD3OU6UCvqM-vzqpBOkOrW2Q=s180',
       'fox-sports': 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Fox_Sports_Logo.svg/1200px-Fox_Sports_Logo.svg.png',
@@ -30,20 +30,20 @@ module.exports = {
       'msnbc': 'https://petergeorgescu.com/wp-content/uploads/2019/10/msnbc-logo-png-1920.png',
       'mtv-news': 'https://www.pngkey.com/png/full/57-579142_mtv-news-logo-png-yoostar-on-mtv-xbox.png',
       'national-geographic': 'https://logos-download.com/wp-content/uploads/2016/07/National_Geographic_logo.png',
-      'national-review': 'https://lh3.googleusercontent.com/proxy/AwKXG7YXo3lnfaGjpYeOY0duM6dcjH5spER6VcCPbuvH9jI0rkd066pL6ZwhzZJh8wtWWUAIl_WuSLnpBIDWdmavD6W1G_UlKV-OZM2gah3wOeiqQcnOzIsZQc-fkGTGBDNfAE-w-g',
+      'national-review': 'https://www.nationalreview.com/wp-content/themes/national-review/static/images/logo.png',
       'nbc-news': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/NBC_News_2011.svg/633px-NBC_News_2011.svg.png',
       'new-scientist': 'https://media-exp1.licdn.com/dms/image/C560BAQHrL_brt8PGZQ/company-logo_200_200/0?e=2159024400&v=beta&t=7vv_QgmDxRHbC0piZMVSIg5uAs_pClV0NBUJpSsUjxQ',
       'newsweek': 'https://upload.wikimedia.org/wikipedia/commons/d/db/Newsweek_Logo.svg',
       'new-york-magazine': 'https://www.buildhappytogether.com/wp-content/uploads/2018/01/NYMag.png',
       'next-big-future': 'https://www.nextbigcoins.io/wp-content/uploads/2018/05/nextBIGfuture_diamond-287x300.png',
       'nfl-news': 'https://i.pinimg.com/originals/da/db/24/dadb24bf0fa7211a734137a73874da85.gif',
-      'nhl-news': 'https://assets.stickpng.com/thumbs/5a4fbb7bda2b4f099b95da15.png',
+      'nhl-news': 'https://1000logos.net/wp-content/uploads/2017/05/NHL-Logo.png',
       'politico': 'https://americansforprosperity.org/wp-content/uploads/2015/12/vTU7bvBa.png',
       'recode': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Recode_logo_2016.svg/1280px-Recode_logo_2016.svg.png',
       'reuters': 'https://i1.wp.com/globalriskinsights.com/wp-content/uploads/2016/03/Reuters-Logo.jpg?ssl=1',
       'rte': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgQ0nOn_AGYH_z8RU7FbD-QJJTasnirU9hPQ&usqp=CAU',
       'talksport': 'https://talksport.com/wp-content/uploads/sites/5/2018/06/cropped-App-Icon2.png?strip=all',
-      'techcrunch': 'https://assets.stickpng.com/images/5a1863973a18271ae9cd636e.png',
+      'techcrunch': 'https://talkingbiznews.com/wp-content/uploads/2020/06/TechCrunch-Logo.png',
       'techradar': 'https://zmcommunications.com/assets/uploads/2016/11/techradar_logo.gif',
       'the-american-conservative': 'https://theamericanconservative.com/wp-content/uploads/2019/10/TAC-Profile-Fallback.png',
       'the-hill': 'https://www.nysenate.gov/sites/default/files/in-the-news/main-image/the_hill.jpg',
@@ -60,7 +60,6 @@ module.exports = {
     }
 
     const sources = await db.Source.findAll()
-    console.log(sources);
 
     await Promise.all(sources.map(async(source) => {
       const key = source.encodedName

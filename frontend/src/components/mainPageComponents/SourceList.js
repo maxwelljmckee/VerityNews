@@ -37,7 +37,7 @@ const SourceList = () => {
         {/* <form onSubmit={handleSubmit}> */}
           <input 
             type='text'
-            placeholder='Search by source name'
+            placeholder='Search by Publication Name'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

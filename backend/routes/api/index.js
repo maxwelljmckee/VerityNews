@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const sessionRouter = require("./session.js");
 const usersRouter = require("./users.js");
-const sourcesRouter = require('./sources');
+const sourcesRouter = require('./sources.js');
+const channelsRouter = require('./channels.js');
 
 const asyncHandler = require('express-async-handler');
 const { setTokenCookie } = require('../../utils/auth.js');
@@ -46,7 +47,8 @@ router.post("/test", function (req, res) {
 
 router.use("/session", sessionRouter);
 router.use("/users", usersRouter);
-router.use('/sources', sourcesRouter)
+router.use('/sources', sourcesRouter);
+router.use('/channels', channelsRouter);
 
 
 module.exports = router;

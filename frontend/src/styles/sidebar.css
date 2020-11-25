@@ -21,24 +21,29 @@
 
 .welcome__message {
   margin: 15px auto 25px;
+  text-align: center;
+  line-height: 1.4em;
 }
 
 .channel__container {
+  padding: 5px 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
+  border-top: 1px solid rgb(112, 112, 112);
+  border-bottom: 1px solid rgb(112, 112, 112);
 }
 
 .channel__header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 280px;
 }
 
 .channel__header i {
-  margin: 5px 15px;
-  font-size: 22px;
+  margin: 5px 12px;
+  font-size: 20px;
   height: 22px;
   cursor: pointer;
 }
@@ -46,4 +51,54 @@
 .channel__header div {
   font-size: 18px;
   align-self: center;
+}
+
+.channel__header-group1 {
+  display: flex;
+}
+
+.channel__list {
+  margin-left: 10px;
+}
+
+.new__channel__button {
+  position: relative;
+}
+
+.new__channel__form {
+  height: 35px;
+  width: 250px;
+  border: 1px solid rgb(112, 112, 112);
+  box-shadow: 0 0 2px 1px rgb(112, 112, 112);
+  border-radius: 4px;
+  position: absolute;
+  top: 30px;
+  /* left: 1px; */
+  z-index: 3;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new__channel__form input {
+  border: none;
+  max-width: 195px;
+  font-size: 20px;
+  padding-left: 8px;
+}
+
+.new__channel__form button {
+  background-color: rgb(55, 198, 255);
+  height: 35px;
+  width: 45px;
+  border-radius: 4px;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+.new__channel__form input:focus,
+.new__channel__form button:focus {
+  outline: none;
 }

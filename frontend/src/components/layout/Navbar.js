@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isHidden, setIsHidden] = useState(true);
   const dispatch = useDispatch();
   // const user = useSelector(state => state.session.user);
-  const history = useHistory();
+  // const history = useHistory();
 
   const toggleIsHidden = () => {
     setIsHidden(!isHidden);
@@ -22,7 +22,6 @@ const Navbar = () => {
       dispatch(fetchSources);
     }
     setSources()
-    history.push('/explore')
   }
 
   useEffect(() => {
