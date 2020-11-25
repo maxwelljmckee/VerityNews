@@ -111,12 +111,19 @@ router.post(`/channels/sources`,
   requireAuth,
   asyncHandler(async (req, res) => {
     const { channelId, sourceId } = req.body;
+    console.log('===================================');
     
-    await db.ChannelSource.create({
-      where: { channelId, sourceId }
+    await db.ChannelSource.create({ channelId, sourceId })
+    const channelSources = await db.ChannelSource.findAll({ 
+      where: { channelId },
+      include: db.Source
+    });
+    // console.log(channelSources);
+    const sources = channelSources.map(cs => {
+      return cs.sourceId
     })
-    const sources = await db.ChannelSource.findAll({ where: channelId });
-    res.json(sources)
+    console.log(sources);
+    // res.json(sources)
 }))
 
 module.exports = router;

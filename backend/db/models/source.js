@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       const columnMapping = {
         through: 'ChannelSource',
         otherKey: 'channelId',
-        foreignKey: 'studentId'
+        foreignKey: 'sourceId'
       }
       Source.belongsToMany(models.Channel, columnMapping);
     }
