@@ -8,6 +8,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
 }
 
 .category__card {
@@ -43,6 +44,14 @@
 
 .active .category__title {
   color: rgb(73, 216, 97);
+}
+
+.explore__header {
+  font-size: 45px;
+  color: rgb(58, 58, 58);
+  position: absolute;
+  left: 100px;
+  bottom: 100px;
 }
 
 

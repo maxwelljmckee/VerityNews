@@ -6,11 +6,14 @@ import CategoryCard from './CategoryCard';
 
 const CategoryList = ({ categories }) => {
   return (
-    <div className='category__card__container'>
-      {categories.map(category => {
-        return <CategoryCard key={category.name} category={category} />
-      })}
-    </div>
+    <Fragment>
+      <div className='category__card__container'>
+        {categories.map(category => {
+          return <CategoryCard key={category.name} category={category} />
+        })}
+      </div>
+      {/* <h1 className='explore__header'>Explore</h1> */}
+    </Fragment>
   )
 }
 
