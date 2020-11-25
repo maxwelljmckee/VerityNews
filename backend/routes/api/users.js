@@ -79,9 +79,7 @@ router.post('/channels',
 router.delete('/channels',
   requireAuth,
   asyncHandler(async (req, res) => {
-    console.log('=============== hello from backend ==============');
     const { channelId } = req.body;
-    console.log('channelId', channelId);
     const { id } = req.user;
     await db.Channel.destroy({ where: { id: channelId }});
 
@@ -109,11 +107,10 @@ router.get('/channels/:channelId/sources',
 }))
 
 
-router.post(`/channels/:channelId/sources`, 
+router.post(`/channels/sources`, 
   requireAuth,
   asyncHandler(async (req, res) => {
-    const { sourceId } = req.body;
-    const { channelId } = req.params;
+    const { channelId, sourceId } = req.body;
     
     await db.ChannelSource.create({
       where: { channelId, sourceId }

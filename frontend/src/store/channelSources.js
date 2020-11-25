@@ -7,14 +7,14 @@ const SET_CHANNEL_SOURCES = 'SET_CHANNEL_SOURCES;'
 
 // DEFINE ACTION CREATORS - ASYNC/THUNK //
 export const fetchChannelSources = ({ channelId }) => async (dispatch) => {
-  const res = await fetch(`/api/users/channels/:${channelId}/sources`);
+  const res = await fetch(`/api/users/channels/sources`);
   console.log(res);
 }
 
-export const addChannelSources = ({ sourceId }) => async (dispatch) => {
-  const res = await fetch(`/api/users/channels/:${channelId}/sources`, {
+export const addChannelSources = ({ channelId, sourceId }) => async (dispatch) => {
+  const res = await fetch(`/api/users/channels/sources`, {
     method: 'POST',
-    body: JSON.stringify({ sourceId })
+    body: JSON.stringify({ channelId, sourceId })
   })
   dispatch(setChannelSources(res.data));
 }
