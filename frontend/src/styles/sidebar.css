@@ -8,7 +8,9 @@
   height: 100vh;
   width: 280px;
   margin-left: 70px;
-  background-color: rgb(238, 238, 238);
+  /* background-color: rgb(238, 238, 238); */
+  background-color: rgb(58, 58, 58);
+  color: rgb(226, 226, 226);
   box-shadow: 0 0 3px 3px rgb(112, 112, 112);
   position: fixed;
   z-index: 2;
@@ -132,6 +134,7 @@
 .channel__item__header-group1 {
   display: flex;
   align-items: center;
+  position: relative
 }
 
 .channel__item__header i {

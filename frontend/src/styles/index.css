@@ -20,7 +20,7 @@ body {
   position: relative;
   right: 10px;
   bottom: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(112, 112, 112);
 }
 
 .main__page__container {

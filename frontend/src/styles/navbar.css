@@ -1,7 +1,8 @@
 .navbar {
-  background-color: rgb(238, 238, 238);
+  /* background-color: rgb(238, 238, 238); */
+  background-color: rgb(58, 58, 58);
   height: 80px;
-  width: 90%;
+  width:88%;
   padding-right: 150px;
   display: flex;
   justify-content: space-evenly;
@@ -16,7 +17,8 @@
 .navbar i {
   font-size: 30px;
   cursor: pointer;
-  color: rgb(58, 58, 58);
+  color: rgb(226, 226, 226);
+  /* color: rgb(58, 58, 58); */
 }
 
 .settings__menu {
@@ -36,6 +38,7 @@
   text-decoration: none;
   font-size: 20px;
   padding: 5px;
+  color: rgb(58, 58, 58);
 }
 
 .position__box {

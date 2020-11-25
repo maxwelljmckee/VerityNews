@@ -1,17 +1,22 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-import DeleteChannelButton from './NewChannelForm'
+import { deleteChannel } from '../../../store/channels';
+import ChannelSourceList from './ChannelSourceList';
 
 
-const ChannelItem = ({ channel }) => {
+const ChannelItem = ({ channel, idx }) => {
   const [isHidden, setIsHidden] = useState(true);
+  const dispatch = useDispatch();
 
   const toggleIsHidden = () => {
     setIsHidden(!isHidden);
   }
 
-  const deleteChannel = () => {
-    console.log('delete channel');
+  const handleDelete = () => {
+    (async(idx) => {
+      dispatch(deleteChannel({ channelId: channel.id }))
+    })();
   }
 
   useEffect(() => {
@@ -28,7 +33,7 @@ const ChannelItem = ({ channel }) => {
               <div onClick={toggleIsHidden} >{channel.name}</div>
             </div>
             <div className='channel__item__header-group2'>
-              <i className="fas fa-minus" onClick={deleteChannel} ></i>
+              <i className="fas fa-minus" onClick={handleDelete} ></i>
             </div>
           </div>
         </Fragment>
@@ -40,10 +45,10 @@ const ChannelItem = ({ channel }) => {
                 <div onClick={toggleIsHidden} >{channel.name}</div>
               </div>
               <div className='channel__item__header-group2'>
-                <i className="fas fa-minus" onClick={deleteChannel} ></i>
+                <i className="fas fa-minus" onClick={handleDelete} ></i>
               </div>
             </div>
-            {/* <ChannelSourceList /> */}
+            <ChannelSourceList />
           </Fragment>
         )}
     </div>

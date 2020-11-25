@@ -47,32 +47,79 @@ router.post(
 );
 
 
+// GET, POST, AND DELETE CHANNELS ASSOCIATED WITH A USER //
 router.get('/channels', 
   requireAuth, 
   asyncHandler(async (req, res) => {
-  const { id } = req.user;
-  console.log('userId:', id);
-  const channels = await db.Channel.findAll({ 
-    where: { userId: id },
-    order: ['name']
-  });
-  res.json(channels || []);
+    const { id } = req.user;
+    console.log('userId:', id);
+    const channels = await db.Channel.findAll({ 
+      where: { userId: id },
+      order: ['name']
+    });
+    res.json(channels || []);
 }))
 
 
 router.post('/channels', 
   requireAuth,
   asyncHandler(async (req, res) => {
-  const { name } = req.body;
-  const { id } = req.user;
-  await db.Channel.create({ name, userId: id });
+    const { name } = req.body;
+    const { id } = req.user;
+    await db.Channel.create({ name, userId: id });
 
-  const channels = await db.Channel.findAll({ 
-    where: { userId: id },
-    order: ['name']
-  });
-  res.json(channels);
+    const channels = await db.Channel.findAll({ 
+      where: { userId: id },
+      order: ['name']
+    });
+    res.json(channels);
 }))
 
+
+router.delete('/channels',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    console.log('=============== hello from backend ==============');
+    const { channelId } = req.body;
+    console.log('channelId', channelId);
+    const { id } = req.user;
+    await db.Channel.destroy({ where: { id: channelId }});
+
+    const channels = await db.Channel.findAll({
+      where: { userId: id },
+      order: ['name']
+    });
+    res.json(channels);
+}))
+
+
+// GET AND POST CHANNELSOURCES ASSOCIATED WITH A CHANNEL //
+router.get('/channels/:channelId/sources',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { channelId } = req.params;
+    const sources = db.Source.findAll({
+      where: channelId,
+      include: {
+        model: ChannelSource,
+        include: Channel
+      }
+    })
+    res.json(sources)
+}))
+
+
+router.post(`/channels/:channelId/sources`, 
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { sourceId } = req.body;
+    const { channelId } = req.params;
+    
+    await db.ChannelSource.create({
+      where: { channelId, sourceId }
+    })
+    const sources = await db.ChannelSource.findAll({ where: channelId });
+    res.json(sources)
+}))
 
 module.exports = router;

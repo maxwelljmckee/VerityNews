@@ -1,4 +1,4 @@
-
+@import 'flip-animation.css';
 
 /* ----- CATEGORIES ----- */
 .category__card__container {
@@ -61,7 +61,7 @@
   overflow: scroll;
 }
 
-.source__card {
+.source__card__logo {
   height: 210px;
   width: 210px;
   margin: 15px;
@@ -74,7 +74,7 @@
   border-radius: 10px;
 }
 
-.source__card:hover {
+.source__card__logo:hover {
   border: 1px solid rgb(112, 112, 112);
   border-radius: 10px;
   box-shadow: 0 0 2px 2px rgb(112, 112, 112);
@@ -82,7 +82,7 @@
   transition: transform 50ms ease-in-out;
 }
 
-.source__card img {
+.source__card__logo img {
   height: 200px;
   width: 200px;
   object-fit: contain;
@@ -101,6 +101,7 @@
   border-radius: 10px;
   font-size: 25px;
   padding-left: 15px;
+  color: rgb(58, 58, 58);
 }
 
 .sources__searchbar input:focus {
@@ -110,6 +111,35 @@
 
 
 
+/* ----- SOURCE__CARD__FORM ----- */
+.source__card__form {
+  height: 210px;
+  width: 210px;
+  margin: 15px;
+  position: relative;
+  bottom: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(238, 238, 238);
+  /* border-radius: 10px; */
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 10px;
+  box-shadow: 0 0 2px 2px rgb(112, 112, 112);
+}
+
+.source__card__form ul {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.source__card__form li {
+  list-style: none;
+  font-size: 22px;
+}
 
 /* ----- MEDIA QUERIES ----- */
 @media (max-width: 1550px) {
