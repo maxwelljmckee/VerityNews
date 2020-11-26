@@ -7,7 +7,6 @@ module.exports = {
     // console.log(sources);
     const seedData = sources.map(source => {
       return {
-        id: source.id,
         name: source.name,
         encodedName: source.encodedName,
         description: source.description,
@@ -21,7 +20,7 @@ module.exports = {
 
     // console.log(seedData);
 
-    // console.log(hello);
+    console.log(hello);
 
     await queryInterface.bulkInsert('Sources', seedData)
   },
