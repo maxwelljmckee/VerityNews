@@ -23,7 +23,7 @@ module.exports = {
 
     // console.log(hello);
 
-    await queryInterface('Sources', seedData)
+    await queryInterface.bulkInsert('Sources', seedData)
   },
 
   down: async (queryInterface, Sequelize) => {
