@@ -1,5 +1,6 @@
 'use strict';
 const db = require('../models');
+const fs = require('fs');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -7,7 +8,6 @@ module.exports = {
     // console.log(sources);
     const seedData = sources.map(source => {
       return {
-        id: source.id,
         name: source.name,
         encodedName: source.encodedName,
         description: source.description,
@@ -19,19 +19,17 @@ module.exports = {
       }
     });
 
-    // console.log(seedData);
+    fs.writeFile('./misc-resources/seeder-backup/production-sourceList.js', JSON.stringify(seedData), (err) => {
+      if (err) throw err;
+      console.log('writefile was successful!');
+    })
 
     // console.log(hello);
 
-    await queryInterface.bulkInsert('Sources', seedData)
+    // await queryInterface.bulkInsert('Sources', seedData)
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('Sources');
   }
 };
