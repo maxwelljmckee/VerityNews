@@ -20,7 +20,7 @@ module.exports = {
 
     // console.log(seedData);
 
-    console.log(hello);
+    // console.log(hello);
 
     await queryInterface.bulkInsert('Sources', seedData)
   },
