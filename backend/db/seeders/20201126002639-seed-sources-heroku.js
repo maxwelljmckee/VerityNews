@@ -7,6 +7,7 @@ module.exports = {
     // console.log(sources);
     const seedData = sources.map(source => {
       return {
+        id: source.id,
         name: source.name,
         encodedName: source.encodedName,
         description: source.description,
