@@ -35,7 +35,7 @@ const ChannelItem = ({ channel }) => {
             </div>
             <div className='channel__item__header-group2'>
               <i className="fas fa-minus" onClick={handleDelete} ></i>
-              <Link to={`/channels/:${channel.name}`}>
+              <Link to={`/channels/${channel.name}`}>
                 <i className="fas fa-arrow-circle-right"></i>
               </Link>
             </div>
@@ -50,7 +50,7 @@ const ChannelItem = ({ channel }) => {
               </div>
               <div className='channel__item__header-group2'>
                 <i className="fas fa-minus" onClick={handleDelete} ></i>
-                <Link to={`/channels/:${channel.id}`}>
+                <Link to={`/channels/${channel.id}`}>
                   <i className="fas fa-arrow-circle-right"></i>
                 </Link>
               </div>
