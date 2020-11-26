@@ -4,12 +4,9 @@ const fs = require('fs');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    const seedData = require('../../misc-resources/seeder-backup/production-sourceList');
-    console.log(seedData);
+    const seedData = require('../../misc-resources/seeder-backup/production-articleList');
 
-    // console.log(hello);
-
-    await queryInterface.bulkInsert('Sources', seedData)
+    await queryInterface.bulkInsert('Articles', seedData);
   },
 
   down: async (queryInterface, Sequelize) => {
