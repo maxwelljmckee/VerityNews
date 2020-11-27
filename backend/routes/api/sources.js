@@ -9,6 +9,11 @@ router.get('/', asyncHandler(async(req, res) => {
   res.json(sources)
 }))
 
+router.get('/:sourceId/articles',
+  asyncHandler(async (req, res) => {
+    // const articles = db.
+}))
+
 
 
 module.exports = router;

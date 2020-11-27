@@ -8,13 +8,14 @@ const SET_ARTICLES = 'SET_ARTICLES';
 // DEFINE ACTION CREATORS - ASYNC/THUNK //
 export const fetchArticlesFromChannel = ({ channelId }) => async (dispatch) => {
   const res = await fetch(`/api/users/channels/${channelId}/articles`);
-  // console.log('fetch result', res.data);
   if (res.data.length) dispatch(setArticles(res.data));
   return res;
 }
 
-export const fetchArticlesFromSource = ({ channelId }) => async (dispatch) => {
-  const res = await fetch('/api/sources/:sourceId/articles');
+export const fetchArticlesFromSource = ({ sourceId }) => async (dispatch) => {
+  const res = await fetch(`/api/sources/${sourceId}/articles`);
+  if (res.data.length) dispatch(setArticles(res.data));
+  return res;
 }
 
 

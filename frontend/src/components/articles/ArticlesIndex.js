@@ -44,10 +44,8 @@ const ArticlesIndex = () => {
         <div className='main__page__group-2'>
           <Navbar />
           <div className='article__card__container'>
-            {currentChannel ? 
-              <h1 className='article__card__channel-name'>{currentChannel.name}</h1>
-              : <div></div>
-            }
+            { currentChannel && <h1 className='article__card__channel-name'>          
+              {currentChannel.name}</h1> }
             <div className='articles__searchbar'>
               <input
                 type='text'

@@ -154,8 +154,7 @@ router.get('/channels/:channelId(\\d+)/articles',
     await Promise.all(sourceNames.map(async(sourceName) => {
       const data = await db.Article.findAll({ 
         where: { sourceId: sourceName },
-        order: [['publishedAt', 'DESC']],
-        // include: db.Source
+        order: [['publishedAt', 'DESC']]
       })
       articles.push(...data)
     }))
