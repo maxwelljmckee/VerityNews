@@ -168,3 +168,8 @@
 .fa-minus {
   cursor: pointer;
 }
+
+.cs__list__empty {
+  font-size: 14px;
+  font-style: italic;
+}

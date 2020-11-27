@@ -10,6 +10,7 @@ import { sessionReducer } from './session';
 import { channelsReducer } from './channels';
 import { sourcesReducer } from './sources';
 import { channelSourcesReducer } from './channelSources';
+import { articlesReducer } from './articles';
 
 
 let enhancer;
@@ -25,7 +26,8 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   sources: sourcesReducer,
   channels: channelsReducer,
-  channelSources: channelSourcesReducer
+  channelSources: channelSourcesReducer,
+  articles: articlesReducer,
 });
 
 

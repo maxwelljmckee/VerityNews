@@ -10,6 +10,7 @@ import NotFound from './components/NotFound';
 import Navbar from './components/layout/Navbar';
 import UserProfile from './components/UserProfile';
 import MainPageLayout from './components/layout/MainPageLayout';
+import ArticlesIndex from './components/articles/ArticlesIndex';
 
 
 function App() {
@@ -38,8 +39,11 @@ function App() {
         <Route path='/register'>
           {sessionUser ? <Redirect to={`/explore`} /> : <RegisterForm />}
         </Route>
+        <Route path='/channels/:channelId' component={ArticlesIndex} />
 
-        <Route exact path='/' component={Welcome} />
+        <Route exact path='/'>
+          { sessionUser ? <Redirect to='/explore' /> : <Welcome /> }
+        </Route>
         <Route path='*' component={NotFound} />
       </Switch>
     </Fragment>

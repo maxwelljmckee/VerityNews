@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Explore from '../mainPageComponents/Explore';
+import ArticlesIndex from '../articles/ArticlesIndex';
 
 
 const MainPageComponent = () => {
@@ -13,8 +14,9 @@ const MainPageComponent = () => {
     <div className='main__page__component'>
       <Router>
         <Switch>
-          <Route exact path='/explore' component={Explore} />
           <Route path='/explore/:category' component={Explore} />
+          <Route exact path='/explore' component={Explore} />
+          <Route path='/channels/:channelId' component={ArticlesIndex} />
         </Switch>
       </Router>
     </div>

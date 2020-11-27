@@ -1,0 +1,93 @@
+
+.article__card__container {
+  padding-left: 100px;
+  padding-top: 130px;
+  display: flex;
+  flex-direction: column;
+}
+
+.article__card {
+  display: flex;
+  height: 165px;
+  min-width: 600px;
+  max-width: 900px;
+  margin: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* border: 2px solid  */
+}
+
+.article__card:hover {
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 10px;
+  box-shadow: 0 0 2px 2px rgb(112, 112, 112);
+  transform: translateY(-4px);
+  transition: transform 50ms ease-in-out;
+}
+
+.article__card__image {
+  height: 1px;
+  width: 200px;
+}
+
+.article__card img {
+  height: 150px;
+  width: 200px;
+  object-fit: cover;
+  padding: 0 10px;
+}
+
+.article__card__info {
+  margin: 10px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.article__card__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.article__card__author {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.article__card__description {
+  font-size: 14px;
+}
+
+.article__card__timestamp {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.article__card__channel-name {
+  font-size: 40px;
+  color: rgb(58, 58, 58);
+}
+
+.articles__searchbar {
+  margin: 40px;
+}
+
+.articles__searchbar input {
+  height: 50px;
+  width: 600px;
+  border: 2px solid rgb(112, 112, 112);
+  border-radius: 10px;
+  font-size: 25px;
+  padding-left: 15px;
+  color: rgb(58, 58, 58);
+}
+
+.articles__searchbar input:focus {
+  outline: none;
+  box-shadow: 0 0 2px 1px rgb(112, 112, 112);
+}

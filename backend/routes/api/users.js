@@ -81,6 +81,12 @@ router.delete('/channels',
   asyncHandler(async (req, res) => {
     const { channelId } = req.body;
     const { id } = req.user;
+    const channelSources = await db.ChannelSource.findAll({ where: { channelId }})
+    console.log('============================');
+    console.log(channelSources);
+    await Promise.all(channelSources.map(async(cs) => {
+      await db.ChannelSource.destroy(cs)
+    }))
     await db.Channel.destroy({ where: { id: channelId }});
 
     const channels = await db.Channel.findAll({
@@ -131,6 +137,31 @@ router.delete('/channels/sources',
       include: db.Source
     });
     res.json(channelSources);
+}))
+
+
+// GET ARTICLES FOR ALL SOURCES ASSOCIATED WITH A CHANNEL //
+router.get('/channels/:channelId(\\d+)/articles',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const { channelId } = req.params;
+    console.log('=================================');
+    console.log('channelId:', channelId);
+    const channelSources = await db.ChannelSource.findAll({
+      where: { channelId },
+      include: db.Source
+    })
+    const sourceNames = channelSources.map(cs => cs.Source.encodedName)
+    const articles = []
+    await Promise.all(sourceNames.map(async(sourceName) => {
+      const data = await db.Article.findAll({ 
+        where: { sourceId: sourceName },
+        order: [['publishedAt', 'DESC']]
+      })
+      articles.push(...data)
+    }))
+    // console.log(articles);
+    res.json(articles)
 }))
 
 module.exports = router;

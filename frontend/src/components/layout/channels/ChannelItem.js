@@ -35,28 +35,28 @@ const ChannelItem = ({ channel }) => {
             </div>
             <div className='channel__item__header-group2'>
               <i className="fas fa-minus" onClick={handleDelete} ></i>
-              <Link to={`/channels/${channel.name}`}>
+              <Link to={`/channels/${channel.id}`}>
                 <i className="fas fa-arrow-circle-right"></i>
               </Link>
             </div>
           </div>
         </Fragment>
       ) : (
-          <Fragment>
-            <div className='channel__item__header'>
-              <div className='channel__item__header-group1'>
-                <i onClick={toggleIsHidden} className="fas fa-angle-down"></i>
-                <div onClick={toggleIsHidden} >{channel.name}</div>
-              </div>
-              <div className='channel__item__header-group2'>
-                <i className="fas fa-minus" onClick={handleDelete} ></i>
-                <Link to={`/channels/${channel.id}`}>
-                  <i className="fas fa-arrow-circle-right"></i>
-                </Link>
-              </div>
+        <Fragment>
+          <div className='channel__item__header'>
+            <div className='channel__item__header-group1'>
+              <i onClick={toggleIsHidden} className="fas fa-angle-down"></i>
+              <div onClick={toggleIsHidden} >{channel.name}</div>
             </div>
-            <ChannelSourceList channel={channel} />
-          </Fragment>
+            <div className='channel__item__header-group2'>
+              <i className="fas fa-minus" onClick={handleDelete} ></i>
+              <Link to={`/channels/${channel.id}`}>
+                <i className="fas fa-arrow-circle-right"></i>
+              </Link>
+            </div>
+          </div>
+          <ChannelSourceList channel={channel} />
+        </Fragment>
         )}
     </div>
   )

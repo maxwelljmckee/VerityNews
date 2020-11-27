@@ -18,8 +18,8 @@ const ChannelSourceList = ({ channel }) => {
 
   const handleDelete = (e) => {
     e.preventDefault()
-    const sourceId = parseInt(e.target.id.split('-')[1], 10)
-    console.log('source id:', sourceId);
+    const sourceId = e.target.id.split('-')[1]
+    console.log(sourceId);
     (async() => {
       dispatch(deleteChannelSource({ 
         channelId: channel.id,
@@ -35,7 +35,6 @@ const ChannelSourceList = ({ channel }) => {
       { sourceList.length ? (
         <ul className='cs__list'>
           { sourceList.map(cs => {
-            console.log(cs);
             return (
               <div key={cs.Source.id} className='cs__list__item'>
                 <li>{cs.Source.name}</li>
@@ -47,7 +46,7 @@ const ChannelSourceList = ({ channel }) => {
           )})}
         </ul>
       ) : (
-        <div>channel empty</div>
+        <div className='cs__list__empty'>channel empty</div>
       )}
     </Fragment>
   )
