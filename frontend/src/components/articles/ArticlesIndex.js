@@ -11,17 +11,19 @@ import { fetchArticlesFromSource } from '../../store/articles';
 
 const ArticlesIndex = () => {
   const { channelId, sourceId } = useParams();
-  const [searchTerm, setSearchTerm] = useState();
+  const [searchTerm, setSearchTerm] = useState('');
   const dispatch = useDispatch();
-  const articles = useSelector(state => state.articles);
+  let articles = useSelector(state => state.articles);
   const channels = useSelector(state => state.channels);
-  // channels.forEach(channel => console.log(channel.id.toString()));
-  // console.log(channelId);
   const currentChannel = channels.find(channel => channel.id.toString() === channelId);
-  console.log(currentChannel);
-  // const params = useParams();
-
-  // console.log('params', params);
+  
+  if (searchTerm) {
+    articles = articles.filter(article => {
+      return article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.content.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    })
+  }
 
   useEffect(() => {
     (async() => {
@@ -34,7 +36,7 @@ const ArticlesIndex = () => {
   }, [dispatch, channelId, sourceId]);
 
   return (
-    <Fragment>
+    <div>
       <div className='main__page__container'>
         <div className='main__page__group-1'>
           <Sidebar />
@@ -49,7 +51,7 @@ const ArticlesIndex = () => {
             <div className='articles__searchbar'>
               <input
                 type='text'
-                placeholder='Search by '
+                placeholder='Search by Keyword'
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -60,7 +62,7 @@ const ArticlesIndex = () => {
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   )
 }
 

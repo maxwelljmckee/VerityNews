@@ -1,6 +1,7 @@
 
 .article__card__container {
   padding-left: 100px;
+  padding-right: 100px;
   padding-top: 130px;
   display: flex;
   flex-direction: column;
@@ -71,10 +72,12 @@
 .article__card__channel-name {
   font-size: 40px;
   color: rgb(58, 58, 58);
+  padding-left: 20px;
 }
 
 .articles__searchbar {
-  margin: 40px;
+  margin: 40px 60px;
+  margin-top: 22px;
 }
 
 .articles__searchbar input {

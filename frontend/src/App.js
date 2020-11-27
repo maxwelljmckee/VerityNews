@@ -27,7 +27,6 @@ function App() {
     <Fragment>
 
       <Switch>
-        {/* <Route path='/users/:id' component={UserProfile} /> */}
         <Route path='/explore' component={MainPageLayout} />
         <Route path='/login'>
           { sessionUser ? <Redirect to={`/explore`} /> : <LoginForm /> }
@@ -40,6 +39,7 @@ function App() {
           {sessionUser ? <Redirect to={`/explore`} /> : <RegisterForm />}
         </Route>
         <Route path='/channels/:channelId' component={ArticlesIndex} />
+        {/* <Route path='/articles/:articleId' component={ArticleDisplayPage} /> */}
 
         <Route exact path='/'>
           { sessionUser ? <Redirect to='/explore' /> : <Welcome /> }

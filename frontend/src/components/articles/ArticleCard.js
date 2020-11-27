@@ -1,14 +1,17 @@
 import React from 'react';
-import dateFormat from 'dateformat'
+import { Link, useHistory } from 'react-router-dom';
+import dateFormat from 'dateformat';
 
 
 const ArticleCard = ({ article }) => {
+  const history = useHistory();
+
   const timestamp = (date) => {
     return dateFormat(date, 'ddd, mmm d yyyy, h:MMTT')
   }
 
   const handleClick = () => {
-    
+    history.push(`/articles/${article.id}`);
   }
 
   return (

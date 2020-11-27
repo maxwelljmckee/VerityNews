@@ -145,8 +145,6 @@ router.get('/channels/:channelId(\\d+)/articles',
   requireAuth,
   asyncHandler(async (req, res) => {
     const { channelId } = req.params;
-    console.log('=================================');
-    console.log('channelId:', channelId);
     const channelSources = await db.ChannelSource.findAll({
       where: { channelId },
       include: db.Source
@@ -156,11 +154,11 @@ router.get('/channels/:channelId(\\d+)/articles',
     await Promise.all(sourceNames.map(async(sourceName) => {
       const data = await db.Article.findAll({ 
         where: { sourceId: sourceName },
-        order: [['publishedAt', 'DESC']]
+        order: [['publishedAt', 'DESC']],
+        // include: db.Source
       })
       articles.push(...data)
     }))
-    // console.log(articles);
     res.json(articles)
 }))
 
