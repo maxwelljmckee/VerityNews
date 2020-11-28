@@ -8,7 +8,6 @@ import Sidebar from '../layout/Sidebar';
 
 
 const Explore = () => {
-  const params = useParams();
   const categories = [
     {
       name: 'General',
@@ -49,8 +48,10 @@ const Explore = () => {
         <div className='main__page__group-2'>
           <Navbar />
           <div className='main-page-component__container'>
-            <CategoryList categories={categories} />
-            <SourceList />
+            <div className='explore__container'>
+              <CategoryList categories={categories} />
+              <SourceList />
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,10 @@
 @import 'flip-animation.css';
 
+.explore__container{
+  position: relative;
+  top: 80px;
+}
+
 /* ----- CATEGORIES ----- */
 .category__card__container {
   width: 1200px;

@@ -8,9 +8,6 @@ import RegisterForm from './components/Auth/RegisterForm';
 import Welcome from './components/Welcome';
 import NotFound from './components/NotFound';
 import Explore from './components/mainPageComponents/Explore';
-import Navbar from './components/layout/Navbar';
-import UserProfile from './components/UserProfile';
-import MainPageLayout from './components/layout/MainPageLayout';
 import ArticlesIndex from './components/articles/ArticlesIndex';
 
 
@@ -26,15 +23,15 @@ function App() {
 
   return isLoaded && (
     <Fragment>
-
       <Switch>
-        <Route path='/explore' component={Explore} />
+        <Route path='/explore/:category' component={Explore} />
+        <Route exact path='/explore' component={Explore} />
         <Route path='/login'>
           { sessionUser ? <Redirect to={`/explore`} /> : <LoginForm /> }
         </Route>
         <Route path='/logout' render={() => {
           dispatch(deleteSession());
-          return <Redirect to='/' />
+          return <Welcome />
         }} />
         <Route path='/register'>
           {sessionUser ? <Redirect to={`/explore`} /> : <RegisterForm />}

@@ -12,7 +12,6 @@ const CategoryList = ({ categories }) => {
           return <CategoryCard key={category.name} category={category} />
         })}
       </div>
-      {/* <h1 className='explore__header'>Explore</h1> */}
     </Fragment>
   )
 }
