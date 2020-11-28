@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   width: 350px;
+  height: 400px;
 }
 
 .welcome__logo {
@@ -51,6 +52,10 @@
   height: 400px;
   width: 350px;
   margin-right: 20px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .auth__form h1 {
@@ -71,7 +76,7 @@
   align-items: center;
 }
 
-.auth__form input,
+.auth__form form input,
 select:-webkit-autofill:focus {
   width: 330px;
   margin: 7px;

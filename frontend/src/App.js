@@ -26,7 +26,9 @@ function App() {
     <Fragment>
       <Switch>
         <Route path='/explore/:category' component={Explore} />
-        <Route exact path='/explore' component={Explore} />
+        <Route exact path='/explore' component={Explore}>
+          { sessionUser ? <Explore /> : <Redirect to='/' />}
+        </Route>
         <Route path='/login'>
           { sessionUser ? <Redirect to={`/explore`} /> : <LoginForm /> }
         </Route>
@@ -40,7 +42,6 @@ function App() {
         </Route>
         <Route path='/channels/:channelId' component={ArticlesIndex} />
         <Route path='/sources/:sourceEncoded' component={ArticlesIndex} />
-        {/* <Route path='/welcome' component={Welcome} /> */}
         <Route exact path='/'>
           { sessionUser ? <Redirect to='/explore' /> : <Welcome /> }
         </Route>
