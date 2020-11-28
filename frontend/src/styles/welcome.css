@@ -88,6 +88,7 @@ select:-webkit-autofill:focus {
 
 .auth__form input:focus {
   outline: none;
+  box-shadow: 0 0 3px 2px rgb(205, 205, 205);
 }
 
 .auth__form button {
@@ -106,10 +107,9 @@ select:-webkit-autofill:focus {
 }
 
 .auth__form button:hover {
-  box-shadow: 0 0 2px 2px rgb(212, 212, 212);
+  box-shadow: 0 0 3px 2px rgb(205, 205, 205);
   transform: translateY(-2px);
 }
-
 
 
 input:-webkit-autofill {
