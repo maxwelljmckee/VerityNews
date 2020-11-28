@@ -81,8 +81,6 @@ router.delete('/channels',
     const { channelId } = req.body;
     const { id } = req.user;
     const channelSources = await db.ChannelSource.findAll({ where: { channelId }})
-    console.log('============================');
-    console.log(channelSources);
     await Promise.all(channelSources.map(async(cs) => {
       await db.ChannelSource.destroy(cs)
     }))
@@ -119,9 +117,6 @@ router.post(`/channels/sources`,
       where: { channelId },
       include: db.Source
     });
-    // const sources = channelSources.map(cs => {
-    //   return cs.Source
-    // })
     res.json(channelSources);
 }))
 

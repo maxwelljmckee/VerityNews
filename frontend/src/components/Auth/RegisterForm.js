@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { registerUser } from '../../store/session';
 
 
-const RegisterForm = ({ toggleLoginIsHidden }) => {
+const RegisterForm = ({ toggleLoginIsHidden, demoLogin }) => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -64,7 +64,9 @@ const RegisterForm = ({ toggleLoginIsHidden }) => {
         />
         <button type='submit'>Create Account</button>
         {/* <div>Already have an account?</div> */}
-        <button type='button' id='toggle' onClick={toggleLoginIsHidden}>Log In</button>
+        <button type='button' id='toggle' onClick={toggleLoginIsHidden}>to Login</button>
+        <div>– or –</div>
+        <button type='button' onClick={demoLogin}>Login as Demo User</button>
       </form>
     </React.Fragment>
   )

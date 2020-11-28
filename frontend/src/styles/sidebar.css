@@ -17,12 +17,19 @@
 }
 
 .sidebar__logo {
-  align-self: center;
-  height: 150px;
+  margin: 25px auto;
+  /* margin-top: 20px; */
+}
+
+.sidebar__logo img {
+  height: 170px;
+  width: 230px;
 }
 
 .welcome__message {
-  margin: 15px auto 25px;
+  width: 230px;
+  margin: 0 auto;
+  margin-bottom: 25px;
   text-align: center;
   line-height: 1.4em;
 }

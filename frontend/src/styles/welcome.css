@@ -11,8 +11,8 @@
 .welcome__info__container {
   display: flex;
   justify-content: space-between;
-  width: 75%;
-  height: 450px;
+  width: 68%;
+  height: 600px;
   color: rgb(238, 238, 238)
 }
 
@@ -20,28 +20,41 @@
   display: flex;
   flex-direction: column;
   width: 350px;
-  height: 400px;
+  height: 500px;
+  margin-left: 50px;
 }
 
 .welcome__logo {
-  font-size: 50px;
-  margin: 25px 20px;
+  margin-bottom: 20px;
+}
+
+.welcome__logo img {
+  height: 190px;
+  width: 280px;
+  object-fit: cover;
 }
 
 .welcome__byline {
-  font-size: 25px;
+  font-size: 30px;
   margin: 2px 20px;
 }
 
 .welcome__info p {
-  height: 30px;
+  height: 10px;
 }
 
 .welcome__description {
   line-height: 1.5em;
   margin: 5px 20px;
-  text-align: right;
-  margin-left: 120px
+  text-align: left;
+  font-size: 16px;
+}
+
+.welcome__description--tag {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 15px;
 }
 
 
@@ -49,7 +62,7 @@
 
 /* ----- AUTH FORM ----- */
 .auth__form {
-  height: 400px;
+  height: 500px;
   width: 350px;
   margin-right: 20px;
   margin-top: 25px;
@@ -59,7 +72,7 @@
 }
 
 .auth__form h1 {
-  margin: 0 auto;
+  margin: 0px auto;
   text-align: center;
   color: rgb(58, 58, 58);
   font-size: 38px;
@@ -67,6 +80,11 @@
 
 .auth__form form li {
   color: rgb(58, 58, 58)
+}
+
+.auth__form div {
+  color: rgb(58, 58, 58);
+  font-weight: bold;
 }
 
 .auth__form form {

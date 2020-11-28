@@ -44,6 +44,17 @@ router.post(
   }),
 );
 
+// router.post('/demo', asyncHandler(async (req, res) => {
+//   const [credential, password] = ['DemoUser', 'password'];
+//   const user = await db.User.login({ credential, password });
+
+//   setTokenCookie(res, user);
+
+//   return res.json({
+//     user,
+//   })
+// }))
+
 // Log out
 router.delete(
   '/',

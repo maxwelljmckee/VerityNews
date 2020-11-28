@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-
 
 import { loginUser } from '../../store/session';
 
 
-const LoginForm = ({ toggleLoginIsHidden }) => {
+const LoginForm = ({ toggleLoginIsHidden, demoLogin }) => {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
@@ -22,7 +20,7 @@ const LoginForm = ({ toggleLoginIsHidden }) => {
   return (
     <React.Fragment>
       <form onSubmit={handleSubmit}>
-        <h1>Log In </h1>
+        <h1>Login </h1>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
@@ -41,8 +39,10 @@ const LoginForm = ({ toggleLoginIsHidden }) => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type='submit'>Log In</button>
-        <button type='button' onClick={toggleLoginIsHidden}>Sign Up</button>
+        <button type='submit'>Login</button>
+        <button type='button' onClick={toggleLoginIsHidden}>to Sign Up</button>
+        <div>– or –</div>
+        <button type='button' onClick={demoLogin}>Login as Demo User</button>
       </form>
     </React.Fragment>
   )

@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { restoreUser, deleteSession } from './store/session';
 
@@ -14,7 +14,6 @@ import ArticlesIndex from './components/articles/ArticlesIndex';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
-  const history = useHistory();
 
   useEffect(() => {
     dispatch(restoreUser()).then(() => setIsLoaded(true))
@@ -34,8 +33,7 @@ function App() {
         </Route>
         <Route path='/logout' render={() => {
           dispatch(deleteSession());
-          history.push('/');
-          // return <Redirect to='/' />
+          return <Redirect to='/' />
         }} />
         <Route path='/register'>
           {sessionUser ? <Redirect to={`/explore`} /> : <RegisterForm />}
