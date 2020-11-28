@@ -2,7 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import CategoryList from '../mainPageComponents/CategoryList';
-import SourceList from './SourceList'
+import SourceList from './SourceList';
+import Navbar from '../layout/Navbar';
+import Sidebar from '../layout/Sidebar';
 
 
 const Explore = () => {
@@ -40,10 +42,19 @@ const Explore = () => {
 
 
   return (
-    <div className='main-page-component__container'>
-      <CategoryList categories={categories} />
-      <SourceList />
-    </div>
+    <div className='main__page__container'>
+        <div className='main__page__group-1'>
+          <Sidebar />
+        </div>
+        <div className='main__page__group-2'>
+          <Navbar />
+          <div className='main-page-component__container'>
+            <CategoryList categories={categories} />
+            <SourceList />
+          </div>
+        </div>
+      </div>
+    
   )
 }
 

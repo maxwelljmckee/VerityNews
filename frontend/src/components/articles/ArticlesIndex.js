@@ -39,7 +39,7 @@ const ArticlesIndex = () => {
         dispatch(fetchArticlesFromSource({ sourceEncoded }))
       }
     })();
-  }, [dispatch, channelId, sourceEncoded, articles]);
+  }, [dispatch, channelId, sourceEncoded]);
 
   return (
     <div>

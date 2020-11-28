@@ -28,7 +28,7 @@ function App() {
     <Fragment>
 
       <Switch>
-        <Route path='/explore' component={MainPageLayout} />
+        <Route path='/explore' component={Explore} />
         <Route path='/login'>
           { sessionUser ? <Redirect to={`/explore`} /> : <LoginForm /> }
         </Route>

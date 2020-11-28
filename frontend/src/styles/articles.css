@@ -11,7 +11,7 @@
 
 .article__card {
   display: flex;
-  height: 165px;
+  height: 180px;
   min-width: 600px;
   max-width: 900px;
   margin: 15px;
@@ -37,7 +37,7 @@
 }
 
 .article__card img {
-  height: 150px;
+  height: 160px;
   width: 200px;
   object-fit: cover;
   padding: 0 10px;
@@ -45,7 +45,7 @@
 
 .article__card__info {
   margin: 10px;
-  height: 150px;
+  height: 160px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
