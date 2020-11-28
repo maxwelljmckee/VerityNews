@@ -3,17 +3,16 @@ require('dotenv').config();
 const fetch = require('node-fetch');
 const db = require('../models')
 
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const apiKey = process.env.API_KEY;
 
     const sources = await db.Source.findAll();
-    const encodedSources = sources.map(source => source.encodedName).join(',');
 
-    const pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     const articles = [];
-    await Promise.all(pages.map(async (page) => {
-      const res = await fetch(`https://newsapi.org/v2/everything?page=${page}&sources=${encodedSources}&apiKey=${apiKey}`);
+    await Promise.all(sources.map(async (source) => {
+      const res = await fetch(`https://newsapi.org/v2/everything?sources=${source.encodedName}&apiKey=${apiKey}`);
       const data = await res.json();
       articles.push(...data.articles);
     }))
@@ -32,6 +31,7 @@ module.exports = {
     })
 
     await queryInterface.bulkInsert('Articles', seedData);
+
   },
 
   down: async (queryInterface, Sequelize) => {
