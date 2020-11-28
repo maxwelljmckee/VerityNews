@@ -7,6 +7,7 @@ import LoginForm from './components/Auth/LoginForm';
 import RegisterForm from './components/Auth/RegisterForm';
 import Welcome from './components/Welcome';
 import NotFound from './components/NotFound';
+import Explore from './components/mainPageComponents/Explore';
 import Navbar from './components/layout/Navbar';
 import UserProfile from './components/UserProfile';
 import MainPageLayout from './components/layout/MainPageLayout';
@@ -39,7 +40,7 @@ function App() {
           {sessionUser ? <Redirect to={`/explore`} /> : <RegisterForm />}
         </Route>
         <Route path='/channels/:channelId' component={ArticlesIndex} />
-        {/* <Route path='/articles/:articleId' component={ArticleDisplayPage} /> */}
+        <Route path='/sources/:sourceEncoded' component={ArticlesIndex} />
 
         <Route exact path='/'>
           { sessionUser ? <Redirect to='/explore' /> : <Welcome /> }

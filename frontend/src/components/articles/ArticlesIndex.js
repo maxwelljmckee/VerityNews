@@ -10,7 +10,7 @@ import { fetchArticlesFromSource } from '../../store/articles';
 
 
 const ArticlesIndex = () => {
-  const { channelId, sourceId } = useParams();
+  const { channelId, sourceEncoded } = useParams();
   const [searchTerm, setSearchTerm] = useState('');
   const dispatch = useDispatch();
   let articles = useSelector(state => state.articles);
@@ -25,15 +25,21 @@ const ArticlesIndex = () => {
     })
   }
 
+  let sourceName;
+  if (sourceEncoded) {
+    sourceName = sourceEncoded.split('-')
+      .map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+  }
+
   useEffect(() => {
     (async() => {
       if (channelId) {
         dispatch(fetchArticlesFromChannel({ channelId }))
-      } else if (sourceId) {
-        dispatch(fetchArticlesFromSource({ sourceId }))
+      } else if (sourceEncoded) {
+        dispatch(fetchArticlesFromSource({ sourceEncoded }))
       }
     })();
-  }, [dispatch, channelId, sourceId]);
+  }, [dispatch, channelId, sourceEncoded, articles]);
 
   return (
     <div>
@@ -46,6 +52,8 @@ const ArticlesIndex = () => {
           <div className='article__card__container'>
             { currentChannel && <h1 className='article__card__channel-name'>          
               {currentChannel.name}</h1> }
+            { sourceEncoded && <h1 className='article__card__channel-name'>          
+              {sourceName}</h1> }
             <div className='articles__searchbar'>
               <input
                 type='text'

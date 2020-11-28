@@ -52,7 +52,6 @@ router.get('/channels',
   requireAuth, 
   asyncHandler(async (req, res) => {
     const { id } = req.user;
-    console.log('userId:', id);
     const channels = await db.Channel.findAll({ 
       where: { userId: id },
       order: ['name']

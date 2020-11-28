@@ -12,8 +12,9 @@ export const fetchArticlesFromChannel = ({ channelId }) => async (dispatch) => {
   return res;
 }
 
-export const fetchArticlesFromSource = ({ sourceId }) => async (dispatch) => {
-  const res = await fetch(`/api/sources/${sourceId}/articles`);
+export const fetchArticlesFromSource = ({ sourceEncoded }) => async (dispatch) => {
+  console.log('hello from fetch:', sourceEncoded);
+  const res = await fetch(`/api/sources/${sourceEncoded}/articles`);
   if (res.data.length) dispatch(setArticles(res.data));
   return res;
 }

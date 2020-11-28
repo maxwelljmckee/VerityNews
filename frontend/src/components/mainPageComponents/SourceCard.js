@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { addChannelSource } from '../../store/channelSources';
 
@@ -46,20 +47,28 @@ const SourceCard = ({ source }) => {
         </div>
       ) : (
         <div className='source__card__form flip-vertical-left'>
-            <i className="fas fa-times"
+          <div className='x-icon'>
+            <i className="fas fa-times" id='see-logo'
               onClick={() => {
                 setAnimation(true)
                 toggleFormIsHidden()
                 setAnimation(false)
               }} />
+          </div>
           <ul>
-            <div key='title_div'>Choose a Channel</div>
+            <div key='title_div'>Add to Channel</div>
             {channels.map(channel => {
               return <li onClick={handleClick} 
                 id={`channel-${channel.id}`} 
                 key={channel.id}>{channel.name}</li>
             })}
           </ul>
+          <div>– or –</div>
+          <div>See Headlines 
+            <Link to={`/sources/${source.encodedName}`}>
+              <i className="fas fa-arrow-circle-right" id='see-headlines' />
+            </Link>
+          </div>
         </div>
       )}
     </Fragment>

@@ -2,8 +2,10 @@ import React from 'react';
 
 
 const ArticleDisplayPage = ({ article, toggleIsVisible, timestamp }) => {
-  const sourceName = article.sourceId.split('-')
-    .map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+  const sourceName = () => {
+    article.sourceId.split('-')
+      .map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+  }
 
   return (
     <div className='article__display__page slide-in-right'>

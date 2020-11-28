@@ -9,9 +9,14 @@ router.get('/', asyncHandler(async(req, res) => {
   res.json(sources)
 }))
 
-router.get('/:sourceId/articles',
+router.get('/:sourceEncoded/articles',
   asyncHandler(async (req, res) => {
-    // const articles = db.
+    const { sourceEncoded } = req.params;
+    const articles = await db.Article.findAll({ 
+      where: { sourceId: sourceEncoded },
+      order: [['publishedAt', 'DESC']]
+    });
+    res.json(articles);
 }))
 
 
