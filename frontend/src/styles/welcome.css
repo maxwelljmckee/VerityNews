@@ -1,0 +1,118 @@
+
+.welcome__background {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(75deg, rgb(58, 58, 58) 10%, rgb(85, 85, 85), rgb(116, 116, 116), rgb(181, 180, 180), rgb(238, 238, 238));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome__info__container {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  height: 450px;
+  color: rgb(238, 238, 238)
+}
+
+.welcome__info {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.welcome__logo {
+  font-size: 50px;
+  margin: 25px 20px;
+}
+
+.welcome__byline {
+  font-size: 25px;
+  margin: 2px 20px;
+}
+
+.welcome__info p {
+  height: 30px;
+}
+
+.welcome__description {
+  line-height: 1.5em;
+  margin: 5px 20px;
+  text-align: right;
+  margin-left: 120px
+}
+
+
+
+
+/* ----- AUTH FORM ----- */
+.auth__form {
+  height: 400px;
+  width: 350px;
+  margin-right: 20px;
+}
+
+.auth__form h1 {
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(58, 58, 58);
+  font-size: 38px;
+}
+
+.auth__form form li {
+  color: rgb(58, 58, 58)
+}
+
+.auth__form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth__form input,
+select:-webkit-autofill:focus {
+  width: 330px;
+  margin: 7px;
+  padding-left: 10px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: rgb(58, 58, 58);
+  color: rgb(238, 238, 238);
+}
+
+.auth__form ::placeholder {
+  color: rgb(238, 238, 238);
+}
+
+.auth__form input:focus {
+  outline: none;
+}
+
+.auth__form button {
+  margin: 5px auto;
+  margin-top: 12px;
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgb(58, 58, 58);
+  color: rgb(238, 238, 238);
+}
+
+.auth__form button:focus {
+  outline: none;
+}
+
+.auth__form button:hover {
+  box-shadow: 0 0 2px 2px rgb(212, 212, 212);
+  transform: translateY(-2px);
+}
+
+
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: rgb(238, 238, 238);
+  transition: background-color 5000s ease-in-out 0s;
+}

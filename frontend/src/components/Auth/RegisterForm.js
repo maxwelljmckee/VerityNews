@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { registerUser } from '../../store/session';
 
 
-const RegisterForm = () => {
+const RegisterForm = ({ toggleLoginIsHidden }) => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -27,7 +27,7 @@ const RegisterForm = () => {
 
   return (
     <React.Fragment>
-      <h1>register form</h1>
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -62,7 +62,9 @@ const RegisterForm = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-        <button type='submit'>Submit</button>
+        <button type='submit'>Create Account</button>
+        {/* <div>Already have an account?</div> */}
+        <button type='button' id='toggle' onClick={toggleLoginIsHidden}>Log In</button>
       </form>
     </React.Fragment>
   )
