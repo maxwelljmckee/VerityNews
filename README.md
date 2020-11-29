@@ -1,2 +1,2 @@
 # Main Project README
-[Imgur](https://i.imgur.com/rWSAtUm.png)
+![Imgur](https://i.imgur.com/rWSAtUm.png)
