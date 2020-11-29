@@ -19,7 +19,7 @@ With Verity, users can:
 The front-end framework is powered by `React` and `Redux`. These technologies enable Verity News to handle and render large amounts of data, as well as offer a variety of flexible conditional rendering options.
 
 ## Back-end – Expressjs and NewsAPI
-- News API offers a free developer membership that allows for 100 calls/day. Between the development workflow and running a live site, one can project that this would quickly run out. To sidestep this issue, I decided to make my API calls and store the results as static assets on a postgres database. This was a handy workaround, but it also came with a variety of bugs which I will explain in the next section.
+- NewsAPI offers a free developer membership that allows for 100 calls/day. Between the development workflow and running a live site, one can project that this would quickly run out. To sidestep this issue, I decided to make my API calls and store the results as static assets on a postgres database. This was a handy workaround, but it also came with a variety of bugs which I will explain in the next section.
 - Express powers the lighweight api backend for making requests to the database.
 
 # Challenges with the API
