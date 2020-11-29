@@ -29,7 +29,8 @@ The front-end framework is powered by `React` and `Redux`. These technologies en
 - Finally, I learned much too late that when my console printed out `... [+1234 chars]` at the end of the `article.content` property, it wasn't indicating that the console was just too lazy to print out the entire thing, it was because "... [+1234 chars]" was *the actual string-literal returned from the API*. My intention of posting the full article body of each article was thus thwarted, and I resorted to including the url link to the full content.
 
 ###### Solutions
-Ideally the app would make realtime calls to the API instead of storing articles as static assets. This would resolve the article-duplication issue, as well as making it easier to filter out articles with unwanted null values or other data aberrations. Ultimately, it may be necessary to migrate the entire platform to a different news api. This would represent a nuclear option requiring loads of refactoring, but it is probably the best choice for the long-term viability of the platform.
+- Ideally the app would make realtime calls to the API instead of storing articles as static assets. This would resolve the article-duplication issue, as well as making it easier to filter out articles with unwanted null values or other data aberrations. 
+- Ultimately, it may be necessary to migrate the entire platform to a different news api. This would represent a nuclear option requiring loads of refactoring, but it is probably the best choice for the long-term viability of the platform.
 
 # Next Steps
 - `ReadLater`
