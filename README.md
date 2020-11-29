@@ -11,7 +11,7 @@ With Verity, users can:
 - Create their own custom `Channels` by grouping together publication sources.
 
 # Getting Started
-- The easiest way to get started with the Verity News App is to navigate to https://verity-news.herokuapp.com and login as a demo user.
+- The easiest way to get started with the Verity News App is to navigate to https://verity-news.herokuapp.com and login as a demo user. (This may take a few tries as the heroku app wakes up. Thanks for your patience)
 - If you'd prefer to take a deeper dive into the code, you can download the project, install the dependencies in both the frontend and backend directories, and run `npm start` in both directories to launch the localhost development servers.
 
 # Technologies Used
