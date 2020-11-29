@@ -14,7 +14,7 @@ With Verity, users can:
 - The easiest way to get started with the Verity News App is to navigate to https://verity-news.herokuapp.com and login as a demo user. (This may take a few tries as the heroku app wakes up. Thanks for your patience)
 - If you'd prefer to take a deeper dive into the code, you can download the project, install the dependencies in both the frontend and backend directories, and run `npm start` in both directories to launch the localhost development servers.
 
-![page-flow demo](file:///Users/maxwellmckee/Downloads/cf34bee6-f3d0-4d08-851d-ced4025b1b2d.webm)
+![page-flow demo](https://drive.google.com/drive/u/0/folders/1yZ15Sd6kW8pM03PLlz1Gc5cUmWsMXjBP)
 
 # Technologies Used
 ## Front-end – React & Redux
