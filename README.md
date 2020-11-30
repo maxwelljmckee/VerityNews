@@ -5,10 +5,10 @@ Verity News App is your information hub. There's so much news out there these da
 
 ## Key Features
 With Verity, users can:
-- Filter publication sources by category, or match source names to a searchbar input.
-- Navigate directly from sources to associated articles.
-- Filter articles by source or match articles to a keyword input.
-- Create their own custom `Channels` by grouping together publication sources.
+- Filter publication sources by category
+- Navigate directly from sources to associated articles
+- Filter articles by source or match articles to a keyword input
+- Create their own custom `Channels` by grouping together publication sources
 
 ## Getting Started
 - The easiest way to get started with the Verity News App is to navigate to https://verity-news.herokuapp.com and login as a demo user. (This may take a few tries as the heroku app wakes up. Thanks for your patience)
