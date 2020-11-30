@@ -36,7 +36,7 @@ The front-end framework is powered by `React` and `Redux`. These technologies en
 
 ## Next Steps
 - `ReadLater`
-  - As its name would suggest, this would allow the user to bookmark a group of articles to access at a later time.
+  - As its name would suggest, this would allow the user to bookmark articles to access at a later time.
 - `Boards`
   - This feature would be very similar to the `Channels` feature, except that the user would be able to save custom groups of *articles* instead of sources.
 - `Source-Profile`
