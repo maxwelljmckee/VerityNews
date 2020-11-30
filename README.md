@@ -14,7 +14,7 @@ With Verity, users can:
 - Filter articles by source or match articles to a keyword input
 - Create their own custom `Channels` by grouping together publication sources
 
-<img src="./frontend/misc-resources/verity-welcome.gif">
+<img src="./frontend/misc-resources/verity-create-channel.gif">
 
 ## Technologies Used
 ### Front-end – React & Redux
@@ -36,7 +36,7 @@ The front-end framework is powered by `React` and `Redux`. These technologies en
 
 ## Next Steps
 - `ReadLater`
-  - As its name would suggest, this would allow the user to bookmark a group of articles to access at a later time.
+  - As its name would suggest, this would allow the user to bookmark articles to access at a later time.
 - `Boards`
   - This feature would be very similar to the `Channels` feature, except that the user would be able to save custom groups of *articles* instead of sources.
 - `Source-Profile`
