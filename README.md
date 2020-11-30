@@ -14,6 +14,8 @@ With Verity, users can:
 - Filter articles by source or match articles to a keyword input
 - Create their own custom `Channels` by grouping together publication sources
 
+<img src="./frontend/misc-resources/verity-welcome.gif">
+
 ## Technologies Used
 ### Front-end – React & Redux
 The front-end framework is powered by `React` and `Redux`. These technologies enable Verity News to handle and render large amounts of data, as well as offer a variety of flexible conditional rendering options.
