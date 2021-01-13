@@ -12,7 +12,7 @@ Verity News App is your information hub. There's so much news out there these da
 - React-Redux
 - CSS
 
-### Back-end – Expressjs and NewsAPI
+### Back-end
 - Express
 - Sequelize ORM
 - NewsAPI
