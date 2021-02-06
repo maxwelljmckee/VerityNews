@@ -1,3 +1,4 @@
+@import './fade-animation.css';
 
 .sidebar {
   display: flex;
@@ -14,6 +15,11 @@
   box-shadow: 0 0 3px 3px rgb(112, 112, 112);
   position: fixed;
   z-index: 2;
+  /* overflow: auto; */
+}
+
+.sidebar__items {
+  overflow: auto;
 }
 
 .sidebar__logo {
@@ -36,15 +42,72 @@
 
 
 
-/* ------ CHANNEL HEADER && FORM ----- */
-.channel__container {
+/* ------ CHANNEL HEADER && FORM // MEETDEV STYLES ----- */
+.channel__container,
+.meet-dev__container {
   padding: 5px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   border-top: 1px solid rgb(112, 112, 112);
-  border-bottom: 1px solid rgb(112, 112, 112);
+}
+
+.meet-dev__container {
+  margin-top: 30px;
+}
+
+.meet-dev__header {
+  width: 280px;
+  cursor: pointer;
+}
+
+.meet-dev__info img {
+  width: 200px;
+  border-radius: 50%;
+  margin-top: 15px;
+  box-shadow: 0 0 8px 0 rgba(211, 211, 211, .5);
+}
+
+.meet-dev__info .name {
+  font-size: 22px;
+  text-align: center;
+  margin: 8px;
+  margin-bottom: 15px;
+}
+
+.meet-dev__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+
+.meet-dev__links .portfolio,
+.meet-dev__links .linkedin,
+.meet-dev__links .angellist {
+  width: 130px;
+  padding: 10px;
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.meet-dev__links a,
+.meet-dev__links a,
+.meet-dev__links a {
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+}
+
+.meet-dev__links .portfolio:hover,
+.meet-dev__links .linkedin:hover,
+.meet-dev__links .angellist:hover {
+  background-color: rgb(112, 112, 112);
+  cursor: pointer;
 }
 
 .channel__header {
@@ -53,7 +116,8 @@
   width: 280px;
 }
 
-.channel__header i {
+.channel__header i,
+.meet-dev__header i {
   margin: 5px 12px;
   font-size: 18px;
   height: 22px;
