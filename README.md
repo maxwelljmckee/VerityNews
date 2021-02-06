@@ -5,7 +5,20 @@ Verity News App is your information hub. There's so much news out there these da
 
 ## Getting Started
 - The easiest way to get started with the Verity News App is to navigate to https://verity-news.herokuapp.com and login as a demo user. (This may take a few tries as the heroku app wakes up. Thanks for your patience)
-- If you'd prefer to take a deeper dive into the code, you can download the project, install the dependencies in both the frontend and backend directories, and run `npm start` in both directories to launch the localhost development servers.
+
+## Technologies Used
+### Front-end
+- React
+- React-Redux
+- CSS
+
+### Back-end
+- Express
+- Sequelize ORM
+- NewsAPI
+- PostgreSQL
+- Heroku
+
 
 ## Key Features
 With Verity, users can:
@@ -16,17 +29,10 @@ With Verity, users can:
 
 <img src="./frontend/misc-resources/verity-create-channel.gif">
 
-## Technologies Used
-### Front-end – React & Redux
-The front-end framework is powered by `React` and `Redux`. These technologies enable Verity News to handle and render large amounts of data, as well as offer a variety of flexible conditional rendering options.
 
-### Back-end – Expressjs and NewsAPI
-- NewsAPI offers a free developer membership that allows for 100 calls/day. Between the development workflow and running a live site, one can project that this would quickly run out. To sidestep this issue, I decided to make my API calls and store the results as static assets on a postgres database. This was a handy workaround, but it also came with a variety of bugs which I will explain in the next section.
-- Express powers the lighweight api backend for making requests to the database.
-
-## Challenges with the API
+## Roadblocks
 ###### Storing the API response data as static assets came with a variety of unwanted side-effects:
-- The response data from the API is not reliably formatted. Some article objects contain unwanted null values or html tags. This would have been much less difficult to handle when making realtime calls to the API, but proved to be a formidable challenge when seeding a database with a limited number of API calls to work with. For this reason, some of the articles appearing on the app have no image or author available, and some article content contains things like <li> tags.
+- The response data from the API is not reliably formatted. Some article objects contain unwanted null values or html tags. This would have been much less difficult to handle when making realtime calls to the API, but proved to be a formidable challenge when seeding a database with only 100 API calls to work with. For this reason, some of the articles appearing on the app have no image or author available, and some article content contains things like <li> tags.
 - Seeding the database with multiple API calls resulted in some places in duplicate articles. Ordinarily you would simply set a unique constraint in the database, but there was no way to do so without breaking the seed file, and there was no way to debug this flow without exceeding the API call limit.
 - Finally, I learned much too late that when my console printed out `... [+1234 chars]` at the end of the `article.content` property, it wasn't indicating that the console was just too lazy to print out the entire thing, it was because "... [+1234 chars]" was *the actual string-literal returned from the API*. My intention of posting the full article body of each article was thus thwarted, and I resorted to including the url link to the full content.
 
