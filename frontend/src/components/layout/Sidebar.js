@@ -8,22 +8,22 @@ import ChannelHeader from './channels/ChannelHeader';
 
 
 const MeetDev = () => {
-  const [show, setShow] = useState(false);
+  const [hide, setHide] = useState(true);
 
-  const toggleShow = () => {
-    setShow(!show)
+  const toggleHide = () => {
+    setHide(!hide)
   }
 
   return (
     <div className='meet-dev__container'>
-      { show ?
-        <div onClick={toggleShow} className='meet-dev__header'>
+      { hide ?
+        <div onClick={toggleHide} className='meet-dev__header'>
           <i className="fas fa-angle-right"></i>
           Meet the Developer!
         </div>
         :
         <>
-          <div onClick={toggleShow} className='meet-dev__header'>
+          <div onClick={toggleHide} className='meet-dev__header'>
             <i className="fas fa-angle-down"></i>
             Meet the Developer!
           </div>
